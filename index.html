@@ -61,8 +61,10 @@
                             ]);
                             
                               // Optional; add a title and set the width and height of the chart
-                              var options = {'title':'Shares of Nitroyeast'};
-                              var options = {'backgroundColor:' 'transparent','width':400,'height':300};
+                              var options = {backgroundColor: 'transparent',
+                                             'width':400,
+                                             'height':300,
+                                             'title' : 'Shares of Nitroyeast'};
                             
                               // Display the chart inside the <div> element with id="piechart"
                               var chart = new google.visualization.PieChart(document.getElementById('piechart'));
