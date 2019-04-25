@@ -35,10 +35,12 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>NitroYeast</h1>
+							<h1>Nitroyeast</h1>
 							<p>A page run by a 12 year old that has many randomly made documents.</p>
 							<li><a href="https://mbchat.netlify.com" target="_blank" class="button scrolly">Join the chatroom</a></li>
+							
 							<div id="piechart"></div>
+							
 							<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							<script type="text/javascript">
                             // Load google charts
@@ -49,16 +51,15 @@
                             function drawChart() {
                               var data = google.visualization.arrayToDataTable([
                               ['Task', 'Hours per Day'],
-                              ['Work', 8],
-                              ['Friends', 2],
-                              ['Eat', 2],
-                              ['TV', 2],
-                              ['Gym', 2],
-                              ['Sleep', 8]
+                              ['Marshall', 60],
+                              ['Ivor', 20],
+                              ['Graham', 10],
+                              ['Aiden', 5],
+                              ['Ronin', 5]
                             ]);
                             
                               // Optional; add a title and set the width and height of the chart
-                              var options = {'title':'My Average Day', 'width':550, 'height':400};
+                              var options = {'title':'Shares of Nitroyeast', 'width':550, 'height':400};
                             
                               // Display the chart inside the <div> element with id="piechart"
                               var chart = new google.visualization.PieChart(document.getElementById('piechart'));
