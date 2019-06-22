@@ -1,4 +1,4 @@
-let k, blu, red
+let k, blu, red, lazer
 
 class Main extends Phaser.Scene {
 
@@ -13,6 +13,7 @@ class Main extends Phaser.Scene {
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
         red = this.add.image(801,400,'red')
+        lazer = this.add.image(637,283,'lazer').setScale(13243, .09).setTint(0xaa0001).setVisible(0)
     }
 
     update() {
@@ -23,11 +24,17 @@ class Main extends Phaser.Scene {
         let left = k.LEFT.isDown
         let down = k.DOWN.isDown
         let up = k.UP.isDown
+        let space = k.SPACE.isDown
 
         if (left && up) {
             red.x -= 1
             red.y -= 1
             red.rotation = -Math.PI * 3/4
+        }
+        if (space) {
+            lazer.setVisible(true)
+
+            setTimeout( () => {lazer.setVisible(false)}, 200)
         }
         else if (left && down) {
             red.x -= 1
