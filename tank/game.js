@@ -6,6 +6,7 @@ class Main extends Phaser.Scene {
         this.load.image('bg', 'assets/img/background.png')
         this.load.image('blu', 'assets/img/blu-tank.png')
         this.load.image('red', 'assets/img/red-tank.png')
+        this.load.image('lazer', 'assets/img/lazer.png')
     }
     create() {
         k = this.input.keyboard.addKeys('LEFT,RIGHT,SPACE,UP,DOWN,W,A,S,D')
@@ -18,93 +19,98 @@ class Main extends Phaser.Scene {
 
         // red player
 
-        let rright = k.RIGHT.isDown
-        let rleft = k.LEFT.isDown
-        let rdown = k.DOWN.isDown
-        let rup = k.UP.isDown
+        let right = k.RIGHT.isDown
+        let left = k.LEFT.isDown
+        let down = k.DOWN.isDown
+        let up = k.UP.isDown
 
-        if (rleft && ! rright && ! rup && ! rdown) {
-            red.x -= 1
-            red.rotation = Math.PI
-        }
-        if (! rleft && rright && ! rup && ! rdown) {
-            red.x += 1
-            red.rotation = 0
-        }
-        if (! rleft && ! rright && rup && ! rdown) {
-            red.y -= 1
-            red.rotation = -Math.PI/2
-        }
-        if (! rleft && ! rright && ! rup && rdown) {
-            red.y += 1
-            red.rotation = Math.PI/2
-        }
-        if (rleft && ! rright && rup && ! rdown) {
+        if (left && up) {
             red.x -= 1
             red.y -= 1
             red.rotation = -Math.PI * 3/4
         }
-        if (rleft && ! rright && ! rup && rdown) {
+        else if (left && down) {
             red.x -= 1
             red.y += 1
             red.rotation = Math.PI * 3/4
         }
-        if (! rleft && rright && rup && ! rdown) {
+        else if (right && up) {
             red.x += 1
             red.y -= 1
             red.rotation = -Math.PI/4
         }
-        if (! rleft && rright && ! rup && rdown) {
+        else if (right && down) {
             red.x += 1
             red.y += 1
             red.rotation = Math.PI/4
         }
-        
+        else if (left) {
+            red.x -= 1
+            red.rotation = Math.PI
+        }
+
+        else if (right) {
+            red.x += 1
+            red.rotation = 0
+        }
+
+        else if (up) {
+            red.y -= 1
+            red.rotation = -Math.PI/2
+        }
+
+        else if (down) {
+            red.y += 1
+            red.rotation = Math.PI/2
+        }
 
         // blue player
 
-        let lleft = k.A.isDown
-        let lright = k.D.isDown
-        let ldown = k.S.isDown
-        let lup = k.W.isDown
+        let a = k.A.isDown
+        let d = k.D.isDown
+        let s = k.S.isDown
+        let w = k.W.isDown
 
-        if (lleft && ! lright && ! lup && ! ldown) {
+        if (a && w) {
+            blu.x -= 1
+            blu.y -= 1
+            blu.rotation = -Math.PI * 3/4
+        }
+        else if (a && s) {
+            blu.x -= 1
+            blu.y += 1
+            blu.rotation = Math.PI * 3/4
+        }
+        else if (d && w) {
+            blu.x += 1
+            blu.y -= 1
+            blu.rotation = -Math.PI/4
+        }
+        else if (d && s) {
+            blu.x += 1
+            blu.y += 1
+            blu.rotation = Math.PI/4
+        }
+        else if (a) {
             blu.x -= 1
             blu.rotation = Math.PI
         }
-        if (! lleft && lright && ! lup && ! ldown) {
+
+        else if (d) {
             blu.x += 1
             blu.rotation = 0
         }
-        if (! lleft && ! lright && lup && ! ldown) {
+
+        else if (w) {
             blu.y -= 1
             blu.rotation = -Math.PI/2
         }
-        if (! lleft && ! lright && ! lup && ldown) {
+
+        else if (s) {
             blu.y += 1
             blu.rotation = Math.PI/2
         }
-        if (! lleft && lright && ! lup && ldown) {
-            blu.y += 1
-            blu.x += 1
-            blu.rotation = Math.PI/4
-        }
-        if (! lleft && lright && lup && ! ldown) {
-            blu.y -= 1
-            blu.x += 1
-            blu.rotation = -Math.PI/4
-        }
-        if (lleft && ! lright && ! lup && ldown) {
-            blu.y += 1
-            blu.x -= 1
-            blu.rotation = Math.PI*3/4
-        }
-        if (lleft && !lright && lup && ! ldown) {
-            blu.y -= 1
-            blu.x -= 1
-            blu.rotation = -Math.PI*3/4
-        }
-        
+
     }
 }
 
