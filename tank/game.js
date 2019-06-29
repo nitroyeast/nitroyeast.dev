@@ -13,7 +13,8 @@ class Main extends Phaser.Scene {
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
         red = this.add.image(801,400,'red')
-        lazer = this.add.image(637,283,'lazer').setScale(13243, .09).setTint(0xaa0001).setVisible(0)
+        rlazer = this.add.image(637,283,'lazer').setScale(13243, .09).setTint(0xaa0001).setVisible(0)
+        blazer = this.add.image(637,-283,'lazer').setScale(13243, .09).setTint(0xaa0001).setVisible(0)
     }
 
     update() {
@@ -32,9 +33,9 @@ class Main extends Phaser.Scene {
             red.rotation = -Math.PI * 3/4
         }
         if (space) {
-            lazer.setVisible(true)
+            rlazer.setVisible(true)
 
-            setTimeout( () => {lazer.setVisible(false)}, 200)
+            setTimeout( () => {rlazer.setVisible(false)}, 200)
         }
         else if (left && down) {
             red.x -= 1
@@ -83,6 +84,12 @@ class Main extends Phaser.Scene {
             blu.y -= 1
             blu.rotation = -Math.PI * 3/4
         }
+        if (space) {
+            blazer.setVisible(true)
+
+            setTimeout( () => {blazer.setVisible(false)}, 200)
+        }
+
         else if (a && s) {
             blu.x -= 1
             blu.y += 1
