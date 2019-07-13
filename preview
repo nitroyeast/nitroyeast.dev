@@ -1,6 +1,0 @@
-#!/bin/bash
-
-browser-sync start \
-    --no-notify --no-ui \
-    --ignore '**/.*' \
-    -sw

@@ -1,4 +1,4 @@
-let k, blu, red, lazer
+let k, blu, red, lazer, graphics
 
 class Main extends Phaser.Scene {
 
@@ -13,7 +13,8 @@ class Main extends Phaser.Scene {
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
         red = this.add.image(801,400,'red')
-        lazer = this.add.image(637,283,'lazer').setScale(13243, .09).setTint(0xaa0001).setVisible(0)
+        lazer = new Phaser.Geom.Line()
+        graphics = this.add.graphics()
     }
 
     update() {
@@ -26,15 +27,11 @@ class Main extends Phaser.Scene {
         let up = k.UP.isDown
         let space = k.SPACE.isDown
 
+
         if (left && up) {
             red.x -= 1
             red.y -= 1
             red.rotation = -Math.PI * 3/4
-        }
-        if (space) {
-            lazer.setVisible(true)
-
-            setTimeout( () => {lazer.setVisible(false)}, 200)
         }
         else if (left && down) {
             red.x -= 1
@@ -69,6 +66,19 @@ class Main extends Phaser.Scene {
         else if (down) {
             red.y += 1
             red.rotation = Math.PI/2
+        }
+
+        if (space) {
+            Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
+            graphics.lineStyle(2,0xffffff)
+            graphics.strokeLineShape(lazer)
+            let brect = blu.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
+              // die die die
+              graphics.lineStyle(2, 0xff0000)
+            }
+            graphics.strokeRectShape(brect)
+            setTimeout( () => {graphics.clear()}, 200)
         }
 
         // blue player
