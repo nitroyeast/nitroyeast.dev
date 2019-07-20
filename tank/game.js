@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics
+let k, blu, red, lazer, graphics, ok
 
 class Main extends Phaser.Scene {
 
@@ -9,7 +9,7 @@ class Main extends Phaser.Scene {
         this.load.image('lazer', 'assets/img/lazer.png')
     }
     create() {
-        k = this.input.keyboard.addKeys('LEFT,RIGHT,SPACE,UP,DOWN,W,A,S,D')
+        k = this.input.keyboard.addKeys('NUMPAD_ZERO,LEFT,RIGHT,UP,DOWN,W,A,S,D,G')
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
         red = this.add.image(801,400,'red')
@@ -25,18 +25,16 @@ class Main extends Phaser.Scene {
         let left = k.LEFT.isDown
         let down = k.DOWN.isDown
         let up = k.UP.isDown
-        let space = k.SPACE.isDown
+        let space = k.NUMPAD_ZERO.isDown
 
-
-        if (left && up) {
-            red.x -= 1
-            red.y -= 1
-            red.rotation = -Math.PI * 3/4
-        }
-        else if (left && down) {
+        if (left && down) {
             red.x -= 1
             red.y += 1
             red.rotation = Math.PI * 3/4
+        } else if (left && up) {
+            red.x -= 1
+            red.y -= 1
+            red.rotation = -Math.PI * 3/4
         }
         else if (right && up) {
             red.x += 1
@@ -87,6 +85,7 @@ class Main extends Phaser.Scene {
         let d = k.D.isDown
         let s = k.S.isDown
         let w = k.W.isDown
+        let g = k.G.isDown
 
         if (a && w) {
             blu.x -= 1
@@ -126,6 +125,19 @@ class Main extends Phaser.Scene {
         else if (s) {
             blu.y += 1
             blu.rotation = Math.PI/2
+        }
+
+        if (g) {
+            Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
+            graphics.lineStyle(2,0xffffff)
+            graphics.strokeLineShape(lazer)
+            let rrect = red.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,rrect)) {
+              // die die die
+              graphics.lineStyle(2, 0xff0000)
+            }
+            graphics.strokeRectShape(rrect)
+            setTimeout( () => {graphics.clear()}, 200)
         }
 
     }
