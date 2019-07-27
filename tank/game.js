@@ -9,7 +9,7 @@ class Main extends Phaser.Scene {
         this.load.image('lazer', 'assets/img/lazer.png')
     }
     create() {
-        k = this.input.keyboard.addKeys('NUMPAD_ZERO,LEFT,RIGHT,UP,DOWN,W,A,S,D,G')
+        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
         red = this.add.image(801,400,'red')
@@ -25,7 +25,7 @@ class Main extends Phaser.Scene {
         let left = k.LEFT.isDown
         let down = k.DOWN.isDown
         let up = k.UP.isDown
-        let space = k.NUMPAD_ZERO.isDown
+        let space = k.SHIFT.isDown
 
         if (left && down) {
             red.x -= 1
@@ -85,7 +85,7 @@ class Main extends Phaser.Scene {
         let d = k.D.isDown
         let s = k.S.isDown
         let w = k.W.isDown
-        let g = k.G.isDown
+        let g = k.SPACE.isDown
 
         if (a && w) {
             blu.x -= 1
