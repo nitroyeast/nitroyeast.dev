@@ -6,13 +6,13 @@
 * Blocked Bookmarklets
     * If a bookmarklet is blocked when you click on the bookmarklet a little shield with a X on it will appear next to the bookmark button. Click on that shield and it will tell you that the page is trying to load "Scripts from unathenticated sources." You click on load unsafe scripts and then the page will refresh. You then click on the bookmarklet again and it should load.
 * Sources
-        * I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors.
+    * I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors.
 
+### Asteroids
+Spawns a spaceship which can destroy stuff. Arrow keys to move, space to shoot, and escape to quit.
 
-## 
-
-## Blocked Bookmarklets
-
-## Sources
+```js
+javascript:var KICKASSVERSION='2.0';var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);
+```
 
 
