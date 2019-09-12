@@ -110,9 +110,9 @@ javascript:document.addEventListener('mousemove',function(e)%7Blocation.hash=(wi
 
 ### Open
 This opens a mini website in the top right corner of your screen.
-* The website to visit is costomizable.
+* The website to visit is customizable.
 * This is very buggy and may only work on some websites.
-* Size of window is costomizable.
+* Size of window is customizable.
 * Edit "frame.src" for website.
 * Varitaions:
 
