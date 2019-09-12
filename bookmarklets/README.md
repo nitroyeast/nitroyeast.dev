@@ -138,8 +138,77 @@ Opens a box at the top of the screen with customizable text.
 javascript:alert("Heckle deckle dee, that's quite the fee.");
 ```
 
+### Clone Page
+This clones the current page into an about blank page.
+* Some elements may not load correctly.
+* Any edits done to the page (including the pre-mentioned bookmarklet) will save, even after refresh.
 
-    
+```js
+javascript:(function(){var i, nd; function copyChildren(a,b){var i, nn; for(i=0;i<a.childNodes.length;++i) { nn = a.childNodes[i].cloneNode(true); if(nd.importNode) nn = nd.importNode(nn, true); b.appendChild(nn); } } nd=window.open().document; nd.open(); nd.close(); /*140681*/ copyChildren(document.getElementsByTagName("head")[0], nd.getElementsByTagName("head")[0]); copyChildren(document.body, nd.body);})();
+```
+
+### Slowly Clone Page
+This slowly clones the page.
+* Some elements may load better using this than the instant clone.
+* Same as before edits will save even after refresh.
+* For a "quick clone" use a big number such as '918237209'.
+
+```js
+javascript:(function(){var y,x,e,i,speed,L; while(x=document.getElementsByTagName("script")[0])x.parentNode.removeChild(x); speed=parseInt(prompt("Print how many characters at a time?\n1 is slowest.",30)); function T(){x.write(e.substr(i,speed)); if (i<L) setTimeout(T,1); else x.close(); i+=speed; if (i>L)i=L; y.status=i+"/"+L } if (speed>0) { e=document.documentElement.innerHTML; L=e.length; i=0; y=open(); x=y.document; T(); } })()
+```
+
+### Play Audio
+This plays any mp3s on the page.
+* If there are no mp3s it will prompt you to type in the name of a song. It will then look it up (results will be mp3s.)
+
+```js
+javascript:var e,t,n=document.links,i=[],o=0;for(t in n){var a=n[t].toString().toUpperCase();0==a.indexOf("JAVASCRIPT:")||-1==a.indexOf(".MP3")&&-1==a.indexOf(".OGG")&&-1==a.indexOf(".WAV")||i.push(n[t])}if(0==i.length)w(prompt("No songs detected on the current page. What type of music would you like to hear?","okgo"));else{var d=x("div","player","","",""),r=x("div","playing","","",""),p=x("div","progressbar","","",function(t){var n=t.clientX;n/=window.innerWidth,e.currentTime=e.duration*n}),l=x("div","progress","","","");p.appendChild(l),r.appendChild(p);var s=x("div","songname","","","");r.appendChild(s);var u=x("div","buttons","","","");u.appendChild(x("button","","|◀","",y)),u.appendChild(x("button","","||","",function(){e.paused?(e.play(),this.innerHTML="||"):(e.pause(),this.innerHTML="▶")})),u.appendChild(x("button","","▶|","",C)),u.appendChild(x("button","","⤭","",function(){o=Math.floor(Math.random()*i.length),f()})),u.appendChild(x("button","","⌕","",function(){w(prompt("What type of music would you like to hear?","okgo"))})),r.appendChild(u),d.appendChild(r);var c=x("ul","playlist","","","");for(songIndex in i){var h=decodeURIComponent(unescape(i[songIndex].href));c.appendChild(x("li","",h.substring(h.lastIndexOf("/")+1),songIndex,function(){o=parseInt(this.getAttribute("data")),f()}))}d.appendChild(c);var g=x("style","","","","");g.innerHTML=".player{position:absolute;bottom:0;left:0;right:0;background:grey;font-size:x-large;color:#87ceeb;text-shadow:0 1px 1px #000;font-family:courier;font-weight:700}.playing{width:100%;height:160px}.playlist{position:fixed;top:0;bottom:170px;width:100%;background:grey;box-sizing:border-box;margin:0;overflow:scroll}.progressbar{position:relative;height:40px;margin:10px;border-radius:20px;text-align:center;overflow:hidden;border:1px solid #555}.progress{position:relative;width:99%;height:40px;background:#87ceeb}.songname{height:40px;width:100%;text-align:center;white-space:nowrap}.buttons{height:60px;width:100%;text-align:center}.player button{background:0 0;border:none;font-size:40px;color:#87ceeb;text-shadow:0 1px 1px #000}",d.appendChild(g);var m=document.createElement("meta"),b=document.createAttribute("name");b.value="viewport",m.setAttributeNode(b),(b=document.createAttribute("content")).value="width=device-width, initial-scale=1",m.setAttributeNode(b),document.head.appendChild(m),document.body.innerHTML="",document.body.appendChild(d),(e=new Audio).addEventListener("ended",C,!1),v(),f(),navigator.mediaSession.setActionHandler("previoustrack",y),navigator.mediaSession.setActionHandler("nexttrack",C)}function f(){e.src=i[o],e.play();var t=decodeURIComponent(i[o].href);s.innerHTML=t.substring(t.lastIndexOf("/")+1),navigator.mediaSession.metadata=new MediaMetadata({title:s.innerHTML})}function x(e,t,n,i,o){var a=document.createElement(e);""!=t&&a.classList.add(t);var d=document.createAttribute("data");return d.value=i,a.setAttributeNode(d),a.appendChild(document.createTextNode(n)),a.onclick=o,a}function v(){l.style.width=e.currentTime/e.duration*100+"%",requestAnimationFrame(v)}function w(e){e&&window.open("https://www.google.com/search?q=intitle:\"index.of\" (wma|mp3|midi) "+e,"_self")}function y(){o>0?o--:o=i.length-1,f()}function C(){o<i.length-1?o++:o=0,f()}
+```
+
+### Change Font
+Type in the name of a font and the font will change.
+* Only a couple of fonts are recogniized. There is a list with the bookmarklet.
+
+```js
+javascript:function font_c(){var f_name=prompt("Enter the name of font! (no caps) \n For list of fonts visit http://goo.gl/I06Lz");document.body.style.fontFamily=f_name;}font_c();
+```
+
+### Font Name
+Click on text and it will tell you the font.
+
+```js
+javascript:var d=document,b=d.body,s=d.createElement('style'),m;s.innerHTML='*{cursor:help !important;}';b.appendChild(s);b.addEventListener('click',l,0);function l(e){m=/"([^"]+)"|'([^']+)'|([^,]+)/.exec(window.getComputedStyle(e.target).fontFamily);alert('That font is '+(m[1]||m[2]||m[3]));b.removeChild(s);b.removeEventListener('click',l);e.preventDefault()}
+```
+
+## Traps
+* The next section will be more trap related things such as flipping the screen on an input, changing the text they type to something pre-determined, or even making their screen slowly spin around.
+* None of these are permanent and can be fixed with a refresh.
 
 
+### Flip 180
+Instantly flips the screen upside down.
+
+```js
+javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){document.body.style[prefix + 'transform'] = 'rotate(180deg)';});}())
+```
+
+### Flip Trap
+Waits around 5 seconds then, when ther is a input, flips the screen.
+* The waiting period can be changed.
+* Does not apply to multiple tabs.
+* The flipping has an animation, unlike the one above.
+
+```js
+javascript:(function(){setTimeout(function(){document.onmousemove = document.onkeypress = function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){document.body.style[prefix + 'transition'] = prefix + 'transform 3s';document.body.style[prefix + 'transform'] = 'rotate(180deg)';});}}, 5000);}())
+```
+
+### Randomized Tilt
+Tilts each element at a different degree (only slightly,you wont be seeing things upside down.) 
+* You can use this more than once to get different tilts.
+
+```js
+javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())
+```
+
+### Steamed Hams
 
