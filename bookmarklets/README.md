@@ -113,7 +113,13 @@ This opens a mini website in the top right corner of your screen.
 * The website to visit is costomizable.
 * This is very buggy and may only work on some websites.
 * Size of window is costomizable.
+* Edit "frame.src" for website.
 * Varitaions:
+
+Original:
+```js
+javascript:var frame = document.createElement('iframe'); frame.src="https://skilstak.io"; frame.style.position="fixed"; frame.style.top="5%"; frame.style.right="0%";frame.style.height="200px";frame.style.width="275px"; frame.style.zIndex="100000"; document.body.appendChild(frame);var btn = document.createElement('button');btn.style.position="fixed";btn.style.top="5%";btn.style.right="25%";btn.zIndex="100000";btn.innerHTML="HIDE";document.body.appendChild(btn);
+```
 
 Minecraft:
 ```js
@@ -124,6 +130,15 @@ Insanity (Game made by some kid at Skilstak)
 ```js
 javascript:var frame = document.createElement('iframe'); frame.src="https://insanity.netlify.com/"; frame.style.position="fixed"; frame.style.top="5%"; frame.style.right="0%";frame.style.height="575px";frame.style.width="700px"; frame.style.zIndex="100000"; document.body.appendChild(frame);var btn = document.createElement('button');btn.style.position="fixed";btn.style.top="5%";btn.style.right="25%";btn.zIndex="100000";btn.innerHTML="HIDE";document.body.appendChild(btn);
 ```
+
+### Alert
+Opens a box at the top of the screen with customizable text.
+
+```js
+javascript:alert("Heckle deckle dee, that's quite the fee.");
+```
+
+
     
 
 
