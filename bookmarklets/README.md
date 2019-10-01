@@ -8,6 +8,24 @@
     * Some bookmarklets may not work on certain browsers. All work on Google Chrome. 
 * Sources
     * I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors. Some bookmarklets may be found by just looking up the name.
+* Updates
+    * New bookmarklets will be at the top. This is negated if they are in a certain section.
+    * Added dealbot, gravity, 
+
+### Dealbot
+This is a bookmarklet from a website that allows you to see deals (amazon and other online shopping.)
+* Go to https://thedealbot.com/Bookmarklet for more.
+```js
+javascript: (function() {    try {        function include(scriptUrl) {            var xmlhttp = new XMLHttpRequest();            xmlhttp.open('GET', scriptUrl);            xmlhttp.onreadystatechange = function()            {                if ((xmlhttp.status === 200) && (xmlhttp.readyState  === 4))                {                    eval(xmlhttp.responseText);                }            };            xmlhttp.send();        }        include('https://thedealbot.com/Bookmarklet/Bookmarklet.js?time=' + new Date().getTime());    } catch (e) {        console.log('Error', e);    }})();
+```
+
+### Gravity
+This enables gravity on the page.
+* This only works on some pages and elements.
+```js
+javascript:var script = document.createElement("script"); script.src="//gravityscript.github.io/grav.js"; document.body.appendChild(script);void(0);
+```
+
 
 ### Asteroids
 Spawns a spaceship which can destroy stuff. Arrow keys to move, space to shoot, and escape to quit.
