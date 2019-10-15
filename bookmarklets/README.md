@@ -10,20 +10,38 @@
     * I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors. Some bookmarklets may be found by just looking up the name.
 * Updates
     * New bookmarklets will be at the top. 
-    * Added 
+    * Added Rolling sky, faces, font?, notepad, check host, JS panel, script prompt.
 
+### Script Prompt
 
-
+### JS panel
 
 ### Check Host
 
 ### Notepad
+Opens a mini notepad in the bottom right of your screen. This is saved over tabs.
+```js
+javascript:(function() {document.body.innerHTML+='<iframe style=\"width: 25%;border: 3px solid black; z-index: 100000000000; position: fixed; bottom: 0; right: 0; height: 50%;\" src=\"https://offline-editor--adcharity.repl.co/optimized.html\">';})();
+```
 
 ### Font?
+Tells you the font of the text you click on.
+```js
+javascript:void function(){WebFontConfig={google:{families:["Quicksand::latin"]}};var e=document.createElement("script");e.src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",e.type="text/javascript",e.async="true";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t),document.body.style.cursor="crosshair",document.addEventListener("click",function(e){var t=e.target,o=window.getComputedStyle(t),a=o.getPropertyValue("font-family");a=a.replace("'",""),a=a.replace("'",""),a=a.replace('"',""),a=a.replace('"',"");var i=a.split(",");a=i[0].replace(",","");var n=document.createElement("div");n.id="output",n.style.transition="opacity 2s ease",n.style.opacity="1",n.style.right="5%25",n.style.top="5%25",n.style.zIndex="10000",n.style.position="fixed",n.style.fontFamily="Quicksand",n.style.fontWeight="bolder",n.style.background="black",n.style.color="white",n.style.padding="12px",n.innerHTML="<h1>"+a+"</h1>",document.body.appendChild(n),setTimeout(function(){n.style.opacity="0"},0)},!1)}();
+```
 
 ### Faces
+Replaces the tab with a text face.
+* You can change the faces by adding to the list (const faces.)
+```js
+javascript: const faces = ['OwO ', 'UwU', 'TwT', '>w<', '^w^']; let face = faces[Math.floor(Math.random()*faces.length)]; document.write('<body style=\'background-color: black;\'></body><title>' + face + '</title><p style=\'text-align: center; font-size: 500px; font-family: Arial; color: white;\'>' + face + '</p>');
+```
 
-### Rolling SKy
+### Rolling Sky
+Opens up rolling sky is a new tab.
+```js
+javascript:window.open('https://Rolling-Sky--jser.repl.co', '', 'top=15,left=15,scrollbar=yes,width=500,height=600')
+```
 
 ### Dealbot
 This is a bookmarklet from a website that allows you to see deals (amazon and other online shopping.)
