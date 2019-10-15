@@ -13,10 +13,22 @@
     * Added Rolling sky, faces, font?, notepad, check host, JS panel, script prompt.
 
 ### Script Prompt
+This is supposed to inject script into the webpage. In truth I don't know if this works.
+```js
+javascript:function JSexe(){ if(valJS!='null' && valJS!='undefined')strJS=valJS; strJS=prompt('Your Javascript code or variable:',strJS); if(strJS!=null && strJS!='' && strJS!='undefined'){  setTimeout('valJS=\'\'+eval(strJS);JSexe()',10); } else{valJS='';strJS='';}}valJS='';strJS='';JSexe();
+```
 
 ### JS panel
+Opens a panel with other useful bookmarklets. I have not tested all of these.
+```js
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://caiorss.github.io/commandpanel.js' })();
+```
 
 ### Check Host
+Checks the host of the website you are on.
+```js
+javascript:(function(){if(typeof CHBookmarklet!="undefined")CHBookmarklet.start();else{var a="https://check-host.net/bookmarklet.js?"+(new Date).valueOf(),b=document.createElement("script");b.setAttribute("src",a);document.getElementsByTagName("head")[0].appendChild(b)};})();
+```
 
 ### Notepad
 Opens a mini notepad in the bottom right of your screen. This is saved over tabs.
