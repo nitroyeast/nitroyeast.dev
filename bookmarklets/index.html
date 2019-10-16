@@ -14,6 +14,56 @@
 <li>I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors. Some bookmarklets may be found by just looking up the name.</li>
 </ul>
 </li>
+<li>Updates<ul>
+<li>New bookmarklets will be at the top. </li>
+<li>Added Rolling sky, faces, font?, notepad, check host, JS panel, script prompt.</li>
+</ul>
+</li>
+</ul>
+<h3 id="script-prompt">Script Prompt</h3>
+<p>This is supposed to inject script into the webpage. In truth I don&#39;t know if this works.</p>
+<pre><code class="lang-js">javascript:<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">JSexe</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">if</span>(valJS!=<span class="hljs-string">'null'</span> &amp;&amp; valJS!=<span class="hljs-string">'undefined'</span>)strJS=valJS; strJS=prompt(<span class="hljs-string">'Your Javascript code or variable:'</span>,strJS); <span class="hljs-keyword">if</span>(strJS!=<span class="hljs-literal">null</span> &amp;&amp; strJS!=<span class="hljs-string">''</span> &amp;&amp; strJS!=<span class="hljs-string">'undefined'</span>){  setTimeout(<span class="hljs-string">'valJS=\'\'+eval(strJS);JSexe()'</span>,<span class="hljs-number">10</span>); } <span class="hljs-keyword">else</span>{valJS=<span class="hljs-string">''</span>;strJS=<span class="hljs-string">''</span>;}}valJS=<span class="hljs-string">''</span>;strJS=<span class="hljs-string">''</span>;JSexe();
+</code></pre>
+<h3 id="js-panel">JS panel</h3>
+<p>Opens a panel with other useful bookmarklets. I have not tested all of these.</p>
+<pre><code class="lang-js">javascript:(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>)).src=<span class="hljs-string">'http://caiorss.github.io/commandpanel.js'</span> })();
+</code></pre>
+<h3 id="check-host">Check Host</h3>
+<p>Checks the host of the website you are on.</p>
+<pre><code class="lang-js">javascript:(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> CHBookmarklet!=<span class="hljs-string">"undefined"</span>)CHBookmarklet.start();<span class="hljs-keyword">else</span>{<span class="hljs-keyword">var</span> a=<span class="hljs-string">"https://check-host.net/bookmarklet.js?"</span>+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>).valueOf(),b=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);b.setAttribute(<span class="hljs-string">"src"</span>,a);<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].appendChild(b)};})();
+</code></pre>
+<h3 id="notepad">Notepad</h3>
+<p>Opens a mini notepad in the bottom right of your screen. This is saved over tabs.</p>
+<pre><code class="lang-js">javascript:(function() {<span class="hljs-attribute">document.body.innerHTML+='&lt;iframe style=\"width</span>: 25%;<span class="hljs-attribute">border</span>: 3px solid black; <span class="hljs-attribute">z-index</span>: 100000000000; <span class="hljs-attribute">position</span>: fixed; <span class="hljs-attribute">bottom</span>: 0; <span class="hljs-attribute">right</span>: 0; <span class="hljs-attribute">height</span>: 50%;\" <span class="hljs-attribute">src=\"https</span>://offline-editor--adcharity<span class="hljs-variable">.repl</span><span class="hljs-variable">.co</span>/optimized<span class="hljs-variable">.html</span>\"&gt;';})();
+</code></pre>
+<h3 id="font-">Font?</h3>
+<p>Tells you the font of the text you click on.</p>
+<pre><code class="lang-js">javascript:void function(){WebFontConfig={google:{families:[<span class="hljs-string">"Quicksand::latin"</span>]}};<span class="hljs-built_in">var</span> e=document.createElement(<span class="hljs-string">"script"</span>);e.src=<span class="hljs-string">"https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"</span>,e.type=<span class="hljs-string">"text/javascript"</span>,e.async=<span class="hljs-string">"true"</span>;<span class="hljs-built_in">var</span> t=document.getElementsByTagName(<span class="hljs-string">"script"</span>)[<span class="hljs-number">0</span>];t.parentNode.insertBefore(e,t),document.body.<span class="hljs-built_in">style</span>.cursor=<span class="hljs-string">"crosshair"</span>,document.addEventListener(<span class="hljs-string">"click"</span>,function(e){<span class="hljs-built_in">var</span> t=e.target,o=window.getComputedStyle(t),a=o.getPropertyValue(<span class="hljs-string">"font-family"</span>);a=a.replace(<span class="hljs-string">"'"</span>,<span class="hljs-string">""</span>),a=a.replace(<span class="hljs-string">"'"</span>,<span class="hljs-string">""</span>),a=a.replace('<span class="hljs-string">"',"</span><span class="hljs-string">"),a=a.replace('"</span>',<span class="hljs-string">""</span>);<span class="hljs-built_in">var</span> i=a.<span class="hljs-built_in">split</span>(<span class="hljs-string">","</span>);a=i[<span class="hljs-number">0</span>].replace(<span class="hljs-string">","</span>,<span class="hljs-string">""</span>);<span class="hljs-built_in">var</span> n=document.createElement(<span class="hljs-string">"div"</span>);n.id=<span class="hljs-string">"output"</span>,n.<span class="hljs-built_in">style</span>.transition=<span class="hljs-string">"opacity 2s ease"</span>,n.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">opacity</span>=<span class="hljs-string">"1"</span>,n.<span class="hljs-built_in">style</span>.right=<span class="hljs-string">"5%25"</span>,n.<span class="hljs-built_in">style</span>.top=<span class="hljs-string">"5%25"</span>,n.<span class="hljs-built_in">style</span>.zIndex=<span class="hljs-string">"10000"</span>,n.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">position</span>=<span class="hljs-string">"fixed"</span>,n.<span class="hljs-built_in">style</span>.fontFamily=<span class="hljs-string">"Quicksand"</span>,n.<span class="hljs-built_in">style</span>.fontWeight=<span class="hljs-string">"bolder"</span>,n.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">background</span>=<span class="hljs-string">"black"</span>,n.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span>=<span class="hljs-string">"white"</span>,n.<span class="hljs-built_in">style</span>.padding=<span class="hljs-string">"12px"</span>,n.innerHTML=<span class="hljs-string">"&lt;h1&gt;"</span>+a+<span class="hljs-string">"&lt;/h1&gt;"</span>,document.body.appendChild(n),setTimeout(function(){n.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">opacity</span>=<span class="hljs-string">"0"</span>},<span class="hljs-number">0</span>)},!<span class="hljs-number">1</span>)}();
+</code></pre>
+<h3 id="faces">Faces</h3>
+<p>Replaces the tab with a text face.</p>
+<ul>
+<li>You can change the faces by adding to the list (const faces.)<pre><code class="lang-js">javascript: const faces = [<span class="hljs-string">'OwO '</span>, <span class="hljs-string">'UwU'</span>, <span class="hljs-string">'TwT'</span>, <span class="hljs-string">'&gt;w&lt;'</span>, <span class="hljs-string">'^w^'</span>]; let <span class="hljs-built_in">face</span> = faces[Math.<span class="hljs-built_in">floor</span>(Math.<span class="hljs-built_in">random</span>()*faces.length)]; document.write(<span class="hljs-string">'&lt;body style=\'</span>background-color: black;\<span class="hljs-string">'&gt;&lt;/body&gt;&lt;title&gt;'</span> + <span class="hljs-built_in">face</span> + <span class="hljs-string">'&lt;/title&gt;&lt;p style=\'</span><span class="hljs-built_in">text</span>-align: center; font-<span class="hljs-built_in">size</span>: <span class="hljs-number">500</span>px; font-family: Arial; color: white;\<span class="hljs-string">'&gt;'</span> + <span class="hljs-built_in">face</span> + <span class="hljs-string">'&lt;/p&gt;'</span>);
+</code></pre>
+</li>
+</ul>
+<h3 id="rolling-sky">Rolling Sky</h3>
+<p>Opens up rolling sky is a new tab.</p>
+<pre><code class="lang-js">javascrip<span class="hljs-variable">t:window</span>.<span class="hljs-keyword">open</span>(<span class="hljs-string">'https://Rolling-Sky--jser.repl.co'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'top=15,left=15,scrollbar=yes,width=500,height=600'</span>)
+</code></pre>
+<h3 id="dealbot">Dealbot</h3>
+<p>This is a bookmarklet from a website that allows you to see deals (amazon and other online shopping.)</p>
+<ul>
+<li>Go to <a href="https://thedealbot.com/Bookmarklet">https://thedealbot.com/Bookmarklet</a> for more.<pre><code class="lang-js">javascript: (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{    <span class="hljs-keyword">try</span> {        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">include</span>(<span class="hljs-params">scriptUrl</span>) </span>{            <span class="hljs-keyword">var</span> xmlhttp = <span class="hljs-keyword">new</span> XMLHttpRequest();            xmlhttp.open(<span class="hljs-string">'GET'</span>, scriptUrl);            xmlhttp.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)            </span>{                <span class="hljs-keyword">if</span> ((xmlhttp.status === <span class="hljs-number">200</span>) &amp;&amp; (xmlhttp.readyState  === <span class="hljs-number">4</span>))                {                    <span class="hljs-built_in">eval</span>(xmlhttp.responseText);                }            };            xmlhttp.send();        }        include(<span class="hljs-string">'https://thedealbot.com/Bookmarklet/Bookmarklet.js?time='</span> + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime());    } <span class="hljs-keyword">catch</span> (e) {        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Error'</span>, e);    }})();
+</code></pre>
+</li>
+</ul>
+<h3 id="gravity">Gravity</h3>
+<p>This enables gravity on the page.</p>
+<ul>
+<li>This only works on some pages and elements.<pre><code class="lang-js">javascript:<span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>); script.src=<span class="hljs-string">"//gravityscript.github.io/grav.js"</span>; <span class="hljs-built_in">document</span>.body.appendChild(script);<span class="hljs-keyword">void</span>(<span class="hljs-number">0</span>);
+</code></pre>
+</li>
 </ul>
 <h3 id="asteroids">Asteroids</h3>
 <p>Spawns a spaceship which can destroy stuff. Arrow keys to move, space to shoot, and escape to quit.</p>
@@ -146,11 +196,6 @@
 <p>Click on text and it will tell you the font.</p>
 <pre><code class="lang-js">javascript:var d=document,b=d.body,s=d.createElement(<span class="hljs-string">'style'</span>),m;s.innerHTML=<span class="hljs-string">'*{cursor:help !important;}'</span>;b.appendChild(s);b.addEventListener(<span class="hljs-string">'click'</span>,l,<span class="hljs-number">0</span>);<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">l</span><span class="hljs-params">(e)</span>{<span class="hljs-title">m</span>=/"<span class="hljs-params">([^"]+)</span>"|'<span class="hljs-params">([^']+)</span>'|<span class="hljs-params">([^,]+)</span>/.<span class="hljs-title">exec</span><span class="hljs-params">(window.getComputedStyle(e.target)</span>.<span class="hljs-title">fontFamily</span>);<span class="hljs-title">alert</span><span class="hljs-params">('That font is '+(m[1]||m[2]||m[3])</span>);<span class="hljs-title">b</span>.<span class="hljs-title">removeChild</span><span class="hljs-params">(s)</span>;<span class="hljs-title">b</span>.<span class="hljs-title">removeEventListener</span><span class="hljs-params">('click',l)</span>;<span class="hljs-title">e</span>.<span class="hljs-title">preventDefault</span><span class="hljs-params">()</span>}</span>
 </code></pre>
-<h2 id="traps">Traps</h2>
-<ul>
-<li>The next section will be more trap related things such as flipping the screen on an input, changing the text they type to something pre-determined, or even making their screen slowly spin around.</li>
-<li>None of these are permanent and can be fixed with a refresh.</li>
-</ul>
 <h3 id="flip-180">Flip 180</h3>
 <p>Instantly flips the screen upside down.</p>
 <pre><code class="lang-js">javascript:(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{[<span class="hljs-string">''</span>, <span class="hljs-string">'-ms-'</span>, <span class="hljs-string">'-webkit-'</span>, <span class="hljs-string">'-o-'</span>, <span class="hljs-string">'-moz-'</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prefix</span>)</span>{<span class="hljs-built_in">document</span>.body.style[prefix + <span class="hljs-string">'transform'</span>] = <span class="hljs-string">'rotate(180deg)'</span>;});}())
@@ -194,10 +239,6 @@
 <p>Makes the page spin in a circle.</p>
 <pre><code class="lang-js">javascript:(function(){<span class="hljs-built_in">var</span> s=document.createElement('<span class="hljs-built_in">style</span>');s.innerHTML='<span class="hljs-symbol">%</span><span class="hljs-number">40</span>-moz-keyframes roll { <span class="hljs-number">100</span><span class="hljs-symbol">%</span><span class="hljs-number">25</span> { -moz-<span class="hljs-built_in">transform</span>: rotate(129600deg); } } <span class="hljs-symbol">%</span><span class="hljs-number">40</span>-o-keyframes roll { <span class="hljs-number">100</span><span class="hljs-symbol">%</span><span class="hljs-number">25</span> { -o-<span class="hljs-built_in">transform</span>: rotate(129600deg); } } <span class="hljs-symbol">%</span><span class="hljs-number">40</span>-webkit-keyframes roll { <span class="hljs-number">100</span><span class="hljs-symbol">%</span><span class="hljs-number">25</span> { -webkit-<span class="hljs-built_in">transform</span>: rotate(129600deg); } } body{ -moz-<span class="hljs-built_in">animation</span>-name: roll; -moz-<span class="hljs-built_in">animation</span>-duration: 1440s; -moz-<span class="hljs-built_in">animation</span>-iteration-count: <span class="hljs-number">360</span>; -o-<span class="hljs-built_in">animation</span>-name: roll; -o-<span class="hljs-built_in">animation</span>-duration: 1440s; -o-<span class="hljs-built_in">animation</span>-iteration-count: <span class="hljs-number">360</span>; -webkit-<span class="hljs-built_in">animation</span>-name: roll; -webkit-<span class="hljs-built_in">animation</span>-duration: 1440s; -webkit-<span class="hljs-built_in">animation</span>-iteration-count: <span class="hljs-number">360</span>; }';document.getElementsByTagName('head')[<span class="hljs-number">0</span>].appendChild(s);}());
 </code></pre>
-<h2 id="visual-mess">Visual Mess</h2>
-<ul>
-<li>The next section is about bookmarklets that mess up the page.</li>
-</ul>
 <h3 id="uglify">Uglify</h3>
 <p>Changes the font to comic sans, messes up pictures, changes font sizes, changes colors to pink and green, and when you click the screen spins.</p>
 <ul>
