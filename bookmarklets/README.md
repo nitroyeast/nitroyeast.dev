@@ -10,13 +10,19 @@
     * I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors. Some bookmarklets may be found by just looking up the name.
 * Updates
     * New bookmarklets will be at the top. 
-    * Added Bugmenot, field hacker, modify text, paywall bypass, ImageInfo
+    * Added Bugmenot, field hacker, Codesniffer, view+try font
 
-### ImageInfo
+### View&tryFont
+Tells you the font and allows you to test it.
+```js
+javascript:void((function(d)%7Bvar e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//www.typesample.com/assets/typesample.js?r='+Math.random()*99999999);d.body.appendChild(e)%7D)(document));
+```
 
-### Paywall bypass
-
-### Modify Text
+### CodeSniffer
+Sniffs out errors in HTML.
+```js
+javascript:(function() {var _p='//squizlabs.github.io/HTML_CodeSniffer/build/';var _i=function(s,cb) {var sc=document.createElement('script');sc.onload = function() {sc.onload = null;sc.onreadystatechange = null;cb.call(this);};sc.onreadystatechange = function(){if(/^(complete|loaded)$/.test(this.readyState) === true){sc.onreadystatechange = null;sc.onload();}};sc.src=s;if (document.head) {document.head.appendChild(sc);} else {document.getElementsByTagName('head')[0].appendChild(sc);}}; var options={path:_p};_i(_p+'HTMLCS.js',function(){HTMLCSAuditor.run('WCAG2AA',null,options);});})();
+```
 
 ### Field hacker
 Opens up options for typing fields. If you hover over the tabs it tells you thier function.
