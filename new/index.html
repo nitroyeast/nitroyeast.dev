@@ -55,32 +55,9 @@
                 font-size: 38px;
                 font-family: 'Nanum Gothic';
             }
-            .chart {
-                z-index: 10;
-            }
+            
 
         </style>
-        
-        <section class="chart">
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-            <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-              var data = google.visualization.arrayToDataTable([
-              ['Task', 'Hours per Day'],
-              ['Ronan', 1%],
-              ['Aiden', 9%],
-              ['Graham', 10%],
-              ['Ivor', 20%],
-              ['Marshall', 60%]
-            ]);
-              var options = {'title':'Shares of Nitroyeast', 'width':550, 'height':400};
-              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-              chart.draw(data, options);
-            }
-            </script> 
-        </section>
         
         <section class="title">
             <h1 class="top"> This is Nitroyeast.</h1>
