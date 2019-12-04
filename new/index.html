@@ -108,17 +108,19 @@
                 color: white;
                 background-color: black;
             }
-            
-
+            function scrollToTop() { 
+                window.scrollTo(0, 0); 
+            } 
         </style>
         
         <section class="title">
             <h1 class="top"> This is Nitroyeast.</h1>
             <p></p>
             <section class="bottom">The <i>new</i> Nitroyeast.</section>
-            <form action="#projects">
-                <button class="button">↓</button>
-            </form>
+            <button class="button" onclick="scrollToTop()"> 
+                Click to scroll to top 
+            </button> 
+            
         </section>
         
         <p id="projects">The random and insignificant things I've done;</p>
