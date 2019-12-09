@@ -23,18 +23,6 @@
                 font-family: Roboto;
                 background-color: black;
             }
-            .button {
-                background-color: #ff3700;
-                border: none;
-                color: white;
-                padding: 20px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                border-radius: 12px;
-            }
 
             .projects {
                 display: flex;
@@ -112,15 +100,31 @@
                 background-color: black;
                 font-family: Roboto;
             }
+            .demo a {
+              position: absolute;
+              bottom: 20px;
+              left: 50%;
+              z-index: 2;
+              display: inline-block;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              color: #fff;
+              font : normal 400 20px/1 'Josefin Sans', sans-serif;
+              letter-spacing: .1em;
+              text-decoration: none;
+              transition: opacity .3s;
+            }
         </style>
         
         <section class="title">
             <h1 class="top"> This is Nitroyeast.</h1>
             <p></p>
             <section class="bottom">The <i>new</i> Nitroyeast.</section>
-            <nav>
-                <a href="#all" class="button">↓</a>
-            </nav>
+            
+            <section id="section01" class="demo">
+                <a href="#section02"><span></span>Scroll</a>
+            </section>
+            
         </section>
         
         
