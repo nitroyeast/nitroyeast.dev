@@ -102,7 +102,6 @@
             }
             .demo a {
               position: absolute;
-              left: 50%;
               z-index: 2;
               display: inline-block;
               -webkit-transform: translate(0, -50%);
@@ -112,11 +111,12 @@
               letter-spacing: .1em;
               text-decoration: none;
               transition: opacity .3s;
+              justify-content: center;
+              align-items: center;
             }
             #section01 a span {
               position: absolute;
               top: 20px;
-              left: 50%;
               width: 24px;
               height: 24px;
               margin-left: -12px;
@@ -125,6 +125,8 @@
               -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg);
               box-sizing: border-box;
+              justify-content: center;
+              align-items: center;
             }
             .demo a:hover {
                 opacity: .5;
