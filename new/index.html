@@ -131,9 +131,6 @@
                 opacity: .5;
             }
             
-            .stock {
-                z-index: 3;
-            }
         </style>
         
         <section class="title">
@@ -182,32 +179,6 @@
                     <a href="https://docs.google.com/document/d/1fQEm976YoBnYMSGDMZZyVeUM-J2I_71wYUGwHr2_nsY/edit">Friickle Ball</a>
                 </section>
             </div>
-            
-            <section class="stock">
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                // Load google charts
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(drawChart);
-                
-                // Draw the chart and set the chart values
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                  ['Task', 'Hours per Day'],
-                  ['Marshall', 60],
-                  ['Ivor', 20],
-                  ['Ronin', 1],
-                  ['Aiden', 9],
-                  ['Graham', 10],
-                ]);
-                
-                  var options = {'title':'Stocks of Nitroyeast', 'width':550, 'height':400};
-                
-                  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                  chart.draw(data, options);
-                }
-                </script>
-            </section>
             
             <section id="comments">
                 <script>
