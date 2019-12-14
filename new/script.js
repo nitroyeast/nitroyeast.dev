@@ -1,1 +1,1 @@
-let cdiv = document.getElementbyId("hcb_form_content")
+let cdiv = document.getElementById("hcb_form_content")
