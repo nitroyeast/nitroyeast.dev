@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Nitroyeast</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/froogleo.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link rel="shortcut icon" type="image/png" href="/assets/img/favicon-32x32.png" sizes="32x32" />
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#Froogleo">Froogleo+</a></li>
+							<li><a href="#Friickle">Friickle Ball</a></li>
+							<li><a href="#Plat">Platformer</a></li>
+							<li><a href="#C">Comments?</a></li>
+
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Nitroyeast</h1>
+							<p>A page run by a kiddo that has many randomly made documents.</p>
+							<li><a href="https://nitroyeast.dev/bookmarklets" target="_blank" class="button scrolly">See my bookmarklets</a></li>
+							<p></p>
+							<p></p>
+							
+							<div id="piechart"></div>
+							
+							<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+							<script type="text/javascript">
+                            // Load google charts
+                            google.charts.load('current', {'packages':['corechart']});
+                            google.charts.setOnLoadCallback(drawChart);
+                            
+                            // Draw the chart and set the chart values
+                            function drawChart() {
+                              var data = google.visualization.arrayToDataTable([
+                              ['Task', 'Hours per Day'],
+                              ['Marshall', 60],
+                              ['Ivor', 20],
+                              ['Graham', 11],
+                              ['Aiden', 9],
+                            ]);
+                            
+                              // Optional; add a title and set the width and height of the chart
+                              var options = {backgroundColor: 'transparent',
+                                             'width':700,
+                                             'height':450,
+                                             'title' : 'Shares of Nitroyeast'};
+                            
+                              // Display the chart inside the <div> element with id="piechart"
+                              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                              chart.draw(data, options);
+                            }
+                            </script>
+
+
+
+							<ul class="actions">
+							</ul>
+						</div>
+					</section>
+
+
+
+				<!-- Froogleo -->
+					<section id="Froogleo" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Froogleo</h2>
+							<p>The massive doc of Froogleo</p>
+                            <iframe id=froogleo src="https://docs.google.com/document/d/e/2PACX-1vSOYBzHZK3zboaS_nau1nAusS8drMvHfVeMgOTVkyblDVcg_WqXVhk0DPG6h1WYmw9JF0_VlxRJAQ-y/pub?embedded=true"></iframe>
+                            
+
+							<div class="features">
+								<section>
+									<span class="icon major fa-tv"></span>
+									<h3>Froogleo</h3>
+									<p>A major waste of our time, Froogleo. A turn based game the world has never seen the likes of.</p>
+									<ul class="actions">
+								<li><a href="https://docs.google.com/document/d/1wPD9Kf2Hq8KetgXPK3hbRvs_1MEudS0om3SlXTYZh7o/edit" target="_blank" class="button scrolly">See the doc</a></li>
+							</ul>
+								</section>
+								<section>
+									<h3>Froogleo Items</h3>
+									<p>Items for the game of Froogleo.</p>
+									<li><a href="https://docs.google.com/document/d/1D3C-SgKY9KxYPKMD_yTjjWMjEtQIaoWDqRcsHupWMX4" target="_blank" class="button scrolly">Froogleo Items</a></li>
+								</section>
+
+								</div>
+							</div>
+					</section>
+					
+
+
+					
+				<!-- Friickle Ball -->
+				
+					<section id="Friickle" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Friickle Ball</h2>
+							<p>Friickle Ball a game that is a cross between Tennis and Handball.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-ball"></span>
+									<p>A game that kids made up that is surprising complex.</p>
+									<ul class="actions">
+								<li><a href="https://docs.google.com/document/d/1fQEm976YoBnYMSGDMZZyVeUM-J2I_71wYUGwHr2_nsY/edit" target="_blank" class="button scrolly">Friickle Ball</a></li>
+							</ul>
+							    </section>
+							    </div>
+							   </div>
+					</section>
+
+					<section id="Plat" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>PLatformER</h2>
+							<div class="features">
+								<section>
+									<span class="icon major fa-fax"></span>
+									<p>A random platformer that is a work in progress.</p>
+									<ul class="actions">
+								<li><a href="https://platformer.nitroyeast.dev" target="_blank" class="button scrolly">Play the game</a></li>
+							</ul>
+							    </section>
+							    </div>
+							   </div>
+					</section>
+					
+				<!-- Insert more here -->
+				<p></p>
+				<p></p>
+
+
+
+				<!-- begin wwww.htmlcommentbox.com -->
+				<section id="C" class="wrapper style3 fade-up">
+				
+                    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24RFcwLoXTcGnQ2G0.F3Qem0"+"&opts=16862&num=10&ts=1556024342682");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                <!-- end www.htmlcommentbox.com -->
+                </section>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Nitroyeast | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
