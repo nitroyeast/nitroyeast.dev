@@ -46,7 +46,7 @@
      <div id="updates"  
       <li>Updates<ul>
       <li>Newest bookmarklets will be at the top. </li>
-      <li>Added Rolling sky, faces, font?, notepad, check host, JS panel, script prompt.</li>
+      <li>Added x-Ray goggles.</li>
       </ul>
       </li>
       </ul>
@@ -59,29 +59,11 @@
       
     </style>
     <section>
-      
-      <h1 id="bookmarklets-collection">Bookmarklets collection</h1>
-      <h2 id="general-info">General Info</h2>
-      <ul>
-      <li>How to add Boomarklets<ul>
-      <li>Drag the &quot;Drag me to your bookmarks bar&quot; to your bookmark bar. Alternatively click the bookmark button (star), a box will pop up and click more. Where it says URL, copy and paste the bookmarklet code. Then click save and your bookmarklet should appear with other bookmarks.</li>
-      </ul>
-      </li>
-      <li>Blocked Bookmarklets<ul>
-      <li>If a bookmarklet is blocked when you click on the bookmarklet a little shield with a X on it will appear next to the bookmark button. Click on that shield and it will tell you that the page is trying to load &quot;Scripts from unathenticated sources.&quot; You click on load unsafe scripts and then the page will refresh. You then click on the bookmarklet again and it should load.</li>
-      <li>Some bookmarklets may not work on certain browsers. All work on Google Chrome. </li>
-      </ul>
-      </li>
-      <li>Sources<ul>
-      <li>I have created none of these bookmarklets. The names I have listed them as may not be their original names. I will not site the original authors. Some bookmarklets may be found by just looking up the name.</li>
-      </ul>
-      </li>
-      <li>Updates<ul>
-      <li>New bookmarklets will be at the top. </li>
-      <li>Added Rolling sky, faces, font?, notepad, check host, JS panel, script prompt.</li>
-      </ul>
-      </li>
-      </ul>
+      <h3 id="script-prompt">X-Ray Goggles</h3>
+      <p>This lets you edit HTML. It's very advanced editing.</p>
+      <pre><code class="lang-js">javascript:(function () {var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())
+      </code></pre>
+
       <h3 id="script-prompt">Script Prompt</h3>
       <p>This is supposed to inject script into the webpage. In truth I don&#39;t know if this works.</p>
       <pre><code class="lang-js">javascript:<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">JSexe</span><span class="hljs-params">()</span></span>{ <span class="hljs-keyword">if</span>(valJS!=<span class="hljs-string">'null'</span> &amp;&amp; valJS!=<span class="hljs-string">'undefined'</span>)strJS=valJS; strJS=prompt(<span class="hljs-string">'Your Javascript code or variable:'</span>,strJS); <span class="hljs-keyword">if</span>(strJS!=<span class="hljs-literal">null</span> &amp;&amp; strJS!=<span class="hljs-string">''</span> &amp;&amp; strJS!=<span class="hljs-string">'undefined'</span>){  setTimeout(<span class="hljs-string">'valJS=\'\'+eval(strJS);JSexe()'</span>,<span class="hljs-number">10</span>); } <span class="hljs-keyword">else</span>{valJS=<span class="hljs-string">''</span>;strJS=<span class="hljs-string">''</span>;}}valJS=<span class="hljs-string">''</span>;strJS=<span class="hljs-string">''</span>;JSexe();
