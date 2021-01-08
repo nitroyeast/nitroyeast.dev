@@ -103,6 +103,27 @@
                 border-radius: 3px;
                 margin: 10px;
             }
+		
+		.bar {
+			display: flex;
+			flex-direction: row;
+			background-color: #1c1c1c;
+			overflow: hidden;
+			align-self: center;
+			height: 45px;
+		}
+		
+		.bar a {
+			color: #575757;
+			text-align: center;
+			padding: 10px 12px;
+			font-size: 15px;
+		}
+		
+		.bar a:hover {
+			background-color: grey;
+			colror: white;
+		}
         </style>
         
         <section class="title">
@@ -139,7 +160,14 @@
             
         </section>
     </body>
-    <script src="script.js">
-        
+    <script>
+        function show() {
+		var x = document.getElementById("bar");
+		if (x.className === "bar") {
+			x.className += "responsive";
+		} else {
+			x.className = "bar";
+		}
+	}
     </script>
 </html>
