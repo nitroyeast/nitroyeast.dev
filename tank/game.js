@@ -16,8 +16,6 @@ class Main extends Phaser.Scene {
         red = this.add.image(800,400,'red')
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
-        blu.setCollideWorldBounds(true) //collide with outside walls
-        red.setColideWorldBounds(true) //same for red
         
         
         //wall generation
