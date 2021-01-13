@@ -151,6 +151,13 @@ class Main extends Phaser.Scene {
 
 const game = new Phaser.Game({
     scene: Main,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 },
+            debug: false
+        }
+    },
     scale: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
 })
