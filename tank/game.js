@@ -7,14 +7,20 @@ class Main extends Phaser.Scene {
         this.load.image('blu', 'assets/img/blu-tank.png')
         this.load.image('red', 'assets/img/red-tank.png')
         this.load.image('lazer', 'assets/img/lazer.png')
+        this.load.image('wall', 'assets/img/wall.png')
     }
     create() {
         k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.add.image(200,300,'blu')
-        red = this.add.image(801,400,'red')
+        red = this.add.image(800,400,'red')
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
+        pl.setCollideWorldBounds(true) //collide with outside walls
+        
+        //wall generation
+        wall = this.physics.add.staticGroup()
+        plats.create(300, 525, 'wall').setScale(0, 0).refreshBody()
     }
 
     update() {
