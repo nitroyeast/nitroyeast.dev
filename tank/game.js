@@ -20,7 +20,7 @@ class Main extends Phaser.Scene {
         
         //wall generation
         wall = this.physics.add.staticGroup()
-        plats.create(300, 525, 'wall').setScale(0, 0).refreshBody()
+        wall.create(300, 525, 'wall').setScale(0, 0).refreshBody()
     }
 
     update() {
