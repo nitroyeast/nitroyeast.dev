@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics, ok
+let k, blu, red, lazer, graphics, ok, wall
 
 class Main extends Phaser.Scene {
 
