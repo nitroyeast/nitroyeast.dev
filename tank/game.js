@@ -23,7 +23,7 @@ class Main extends Phaser.Scene {
         wall.create(300, 525, 'wall').setScale(1, 1).refreshBody()
         
         //wall collision
-        this.physics.add.collider(blu, wall)
+        this.physics.add.overlap(blu, wall)
         this.physics.add.collider(red, wall)
         this.physics.add.collider(lazer, wall)
     }
