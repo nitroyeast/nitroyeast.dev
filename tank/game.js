@@ -23,15 +23,20 @@ class Main extends Phaser.Scene {
         red.setGravityY(0)
         blu.setGravityY(0)
         //set speed and damping (friction), applied in setDrag
-        red.curSpeed = 150
-        blu.curSpeed = 150
+        red.curSpeed = 160
+        blu.curSpeed = 160
         red.body.useDamping = true
         blu.body.useDamping = true
         red.setDrag(.05)
         blu.setDrag(.05)
         //set verticle movement
-        blu.curJump = 175
-        red.curJump = 175
+        blu.curJump = 160
+        red.curJump = 160
+        //set horizontal movement
+        blu.vertX = 80
+        red.vertX = 80
+        blu.vertY = 80
+        red.vertY = 80
         
         
         //wall generation
@@ -117,22 +122,22 @@ class Main extends Phaser.Scene {
         let g = k.SPACE.isDown
 
         if (a && w) {
-            blu.setVelocityX(-blu.curSpeed)
-            blu.setVelocityY(-blu.curJump)
+            blu.setVelocityX(-blu.vertX)
+            blu.setVelocityY(-blu.vertY)
             blu.rotation = -Math.PI * 3/4
         }
         else if (a && s) {
-            blu.setVelocityX(-blu.curSpeed)
-            blu.setVelocityY(blu.curJump)
+            blu.setVelocityX(-blu.vertX)
+            blu.setVelocityY(blu.vertY)
             blu.rotation = Math.PI * 3/4
         }
         else if (d && w) {
-            blu.setVelocityX(blu.curSpeed)
-            blu.setVelocityY(-blu.curJump)
+            blu.setVelocityX(blu.vertX)
+            blu.setVelocityY(-blu.vertY)
             blu.rotation = -Math.PI/4
         }
         else if (d && s) {
-            blu.setVelocityX(blu.curSpeed)
+            blu.setVelocityX(blu.vertX)
             blu.setVelocityY(blu.curJump)
             blu.rotation = Math.PI/4
         }
