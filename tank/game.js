@@ -83,12 +83,12 @@ class Main extends Phaser.Scene {
         }
 
         else if (up) {
-            red.y -= 1
+            red.setVelocityY(red.curJump)
             red.rotation = -Math.PI/2
         }
 
         else if (down) {
-            red.y += 1
+            red.setVelocityY(-red.curJump)
             red.rotation = Math.PI/2
         }
 
@@ -146,12 +146,12 @@ class Main extends Phaser.Scene {
         }
 
         else if (w) {
-            blu.y -= 1
+            blu.setVelocityY(blu.curJump)
             blu.rotation = -Math.PI/2
         }
 
         else if (s) {
-            blu.y += 1
+            blu.setVelocityY(-blu.curJump)
             blu.rotation = Math.PI/2
         }
 
