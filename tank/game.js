@@ -23,15 +23,15 @@ class Main extends Phaser.Scene {
         red.setGravityY(0)
         blu.setGravityY(0)
         //set speed and damping (friction), applied in setDrag
-        red.curSpeed = 220
-        blu.curSpeed = 220
+        red.curSpeed = 175
+        blu.curSpeed = 175
         red.body.useDamping = true
         blu.body.useDamping = true
         red.setDrag(.20)
         blu.setDrag(.20)
         //set verticle movement
-        
-        
+        blu.curJump = 175
+        red.curJump = 175
         //wall generation
         wall = this.physics.add.staticGroup()
         wall.create(300, 525, 'wall').setScale(1, 1).refreshBody()
@@ -71,12 +71,14 @@ class Main extends Phaser.Scene {
             red.rotation = Math.PI/4
         }
         else if (left) {
-            red.x -= 1
+        
+            red.setVelocityX(-red.curSpeed)
             red.rotation = Math.PI
         }
 
         else if (right) {
-            red.x += 1
+            
+            red.setVelocityX(red.curSpeed)
             red.rotation = 0
         }
 
@@ -132,13 +134,13 @@ class Main extends Phaser.Scene {
             blu.rotation = Math.PI/4
         }
         else if (a) {
-            blu.x -= 1
+            
             blu.setVelocityX(-blu.curSpeed)
             blu.rotation = Math.PI
         }
 
         else if (d) {
-            blu.x += 1
+           
             blu.setVelocityX(blu.curSpeed)
             blu.rotation = 0
         }
