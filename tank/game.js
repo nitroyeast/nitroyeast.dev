@@ -129,13 +129,13 @@ class Main extends Phaser.Scene {
         }
         else if (a) {
             blu.x -= 1
-            pl.setVelocityX(pl.curSpeed)
+            blu.setVelocityX(pl.curSpeed)
             blu.rotation = Math.PI
         }
 
         else if (d) {
             blu.x += 1
-            pl.setVelocityX(pl.curSpeed)
+            blu.setVelocityX(pl.curSpeed)
             blu.rotation = 0
         }
 
