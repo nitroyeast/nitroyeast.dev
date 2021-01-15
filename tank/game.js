@@ -27,8 +27,8 @@ class Main extends Phaser.Scene {
         blu.curSpeed = 160
         red.body.useDamping = true
         blu.body.useDamping = true
-        red.setDrag(.05)
-        blu.setDrag(.05)
+        red.setDrag(.001)
+        blu.setDrag(.001)
         //set verticle movement
         blu.curJump = 160
         red.curJump = 160
@@ -138,7 +138,7 @@ class Main extends Phaser.Scene {
         }
         else if (d && s) {
             blu.setVelocityX(blu.vertX)
-            blu.setVelocityY(blu.curJump)
+            blu.setVelocityY(blu.vertY)
             blu.rotation = Math.PI/4
         }
         else if (a) {
