@@ -23,8 +23,8 @@ class Main extends Phaser.Scene {
         red.setGravityY(0)
         blu.setGravityY(0)
         //set speed
-        red.curSpeed(300)
-        blu.curSpeed(300)
+        red.curSpeed = 300
+        blu.curSpeed = 300
         //set verticle movement
         
         
