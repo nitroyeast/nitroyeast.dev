@@ -12,17 +12,22 @@ class Main extends Phaser.Scene {
     create() {
         k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
         this.add.image(0,0, 'bg').setOrigin(0,0)
-        blu = this.add.image(200,300,'blu')
-        red = this.add.image(800,400,'red')
+        blu = this.physics.add.sprite(200,300,'blu')
+        red = this.physics.add.sprite(800,400,'red')
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
+        //physics stuff
+        red.setCollideWorldBounds(true)
+        blu.setCollideWorldBounds(true)
+        red.setGravityY(0)
+        blu.setGravityY(0)
         
         
         //wall generation
         wall = this.physics.add.staticGroup()
         wall.create(300, 525, 'wall').setScale(1, 1).refreshBody()
         
-        //wall collision
+
 
     }
 
