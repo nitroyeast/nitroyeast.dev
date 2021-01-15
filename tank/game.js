@@ -33,10 +33,10 @@ class Main extends Phaser.Scene {
         blu.curJump = 160
         red.curJump = 160
         //set horizontal movement
-        blu.vertX = 80
-        red.vertX = 80
-        blu.vertY = 80
-        red.vertY = 80
+        blu.vertX = 90
+        red.vertX = 90
+        blu.vertY = 90
+        red.vertY = 90
         
         
         //wall generation
@@ -60,22 +60,22 @@ class Main extends Phaser.Scene {
         let space = k.SHIFT.isDown
 
         if (left && down) {
-            red.setVelocityX(-red.curSpeed)
-            red.setVelocityY(red.curJump)
+            red.setVelocityX(-red.vertY)
+            red.setVelocityY(red.vertY)
             red.rotation = Math.PI * 3/4
         } else if (left && up) {
-            red.x -= 1
-            red.setVelocityY(-red.curJump)
+            red.setVelocityX(-red.vertX)
+            red.setVelocityY(-red.vertY)
             red.rotation = -Math.PI * 3/4
         }
         else if (right && up) {
-            red.setVelocityX(red.curSpeed)
-            red.setVelocityY(-red.curJump)
+            red.setVelocityX(red.vertX)
+            red.setVelocityY(-red.vertY)
             red.rotation = -Math.PI/4
         }
         else if (right && down) {
-            red.setVelocityX(red.curSpeed)
-            red.setVelocityY(red.curJump)
+            red.setVelocityX(red.vertX)
+            red.setVelocityY(red.vertY)
             red.rotation = Math.PI/4
         }
         else if (left) {
