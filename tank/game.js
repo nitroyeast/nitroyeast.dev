@@ -27,8 +27,8 @@ class Main extends Phaser.Scene {
         blu.curSpeed = 275
         red.body.useDamping = true
         blu.body.useDamping = true
-        red.setDrag(.98)
-        blu.setDrag(.98)
+        red.setDrag(.30)
+        blu.setDrag(.30)
         //set verticle movement
         
         
