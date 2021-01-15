@@ -27,12 +27,11 @@ class Main extends Phaser.Scene {
         blu.curSpeed = 175
         red.body.useDamping = true
         blu.body.useDamping = true
-        red.setDrag(.20)
-        blu.setDrag(.20)
+        red.setDrag(.10)
+        blu.setDrag(.10)
         //set verticle movement
         blu.curJump = 175
         red.curJump = 175
-        //set drag for falling/verticle friction
         
         
         //wall generation
@@ -41,6 +40,7 @@ class Main extends Phaser.Scene {
         
         //wall collision
         this.physics.add.collider(blu, wall)
+        this.physics.add.collider(red, wall)
 
     }
 
@@ -55,22 +55,22 @@ class Main extends Phaser.Scene {
         let space = k.SHIFT.isDown
 
         if (left && down) {
-            red.x -= 1
-            red.y += 1
+            red.setVelocityX(-red.curSpeed)
+            red.setVelocityY(red.curJump)
             red.rotation = Math.PI * 3/4
         } else if (left && up) {
             red.x -= 1
-            red.y -= 1
+            red.setVelocityY(-red.curJump)
             red.rotation = -Math.PI * 3/4
         }
         else if (right && up) {
-            red.x += 1
-            red.y -= 1
+            red.setVelocityX(red.curSpeed)
+            red.setVelocityY(-red.curJump)
             red.rotation = -Math.PI/4
         }
         else if (right && down) {
-            red.x += 1
-            red.y += 1
+            red.setVelocityX(red.curSpeed)
+            red.setVelocityY(red.curJump)
             red.rotation = Math.PI/4
         }
         else if (left) {
@@ -117,23 +117,23 @@ class Main extends Phaser.Scene {
         let g = k.SPACE.isDown
 
         if (a && w) {
-            blu.x -= 1
-            blu.y -= 1
+            blu.setVelocityX(-blu.curSpeed)
+            blu.setVelocityY(-blu.curJump)
             blu.rotation = -Math.PI * 3/4
         }
         else if (a && s) {
-            blu.x -= 1
-            blu.y += 1
+            blu.setVelocityX(-blu.curSpeed)
+            blu.setVelocityY(blu.curJump)
             blu.rotation = Math.PI * 3/4
         }
         else if (d && w) {
-            blu.x += 1
-            blu.y -= 1
+            blu.setVelocityX(blu.curSpeed)
+            blu.setVelocityY(-blu.curJump)
             blu.rotation = -Math.PI/4
         }
         else if (d && s) {
-            blu.x += 1
-            blu.y += 1
+            blu.setVelocityX(blu.curSpeed)
+            blu.setVelocityY(blu.curJump)
             blu.rotation = Math.PI/4
         }
         else if (a) {
