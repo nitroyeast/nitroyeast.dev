@@ -23,10 +23,10 @@ class Main extends Phaser.Scene {
         red.setGravityY(0)
         blu.setGravityY(0)
         //set speed and drag
-        red.curSpeed = 300
-        blu.curSpeed = 300
-        red.setDragX = 1000
-        blu.setDragX = 1000
+        red.curSpeed = 275
+        blu.curSpeed = 275
+        red.setDragX = 3000
+        blu.setDragX = 3000
         //set verticle movement
         
         
@@ -131,7 +131,7 @@ class Main extends Phaser.Scene {
         }
         else if (a) {
             blu.x -= 1
-            blu.setVelocityX(blu.curSpeed)
+            blu.setVelocityX(-blu.curSpeed)
             blu.rotation = Math.PI
         }
 
