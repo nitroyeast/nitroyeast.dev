@@ -32,6 +32,9 @@ class Main extends Phaser.Scene {
         //set verticle movement
         blu.curJump = 175
         red.curJump = 175
+        //set drag for falling/verticle friction
+        
+        
         //wall generation
         wall = this.physics.add.staticGroup()
         wall.create(300, 525, 'wall').setScale(1, 1).refreshBody()
@@ -83,12 +86,12 @@ class Main extends Phaser.Scene {
         }
 
         else if (up) {
-            red.setVelocityY(red.curJump)
+            red.setVelocityY(-red.curJump)
             red.rotation = -Math.PI/2
         }
 
         else if (down) {
-            red.setVelocityY(-red.curJump)
+            red.setVelocityY(red.curJump)
             red.rotation = Math.PI/2
         }
 
@@ -146,12 +149,12 @@ class Main extends Phaser.Scene {
         }
 
         else if (w) {
-            blu.setVelocityY(blu.curJump)
+            blu.setVelocityY(-blu.curJump)
             blu.rotation = -Math.PI/2
         }
 
         else if (s) {
-            blu.setVelocityY(-blu.curJump)
+            blu.setVelocityY(blu.curJump)
             blu.rotation = Math.PI/2
         }
 
