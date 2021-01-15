@@ -22,11 +22,11 @@ class Main extends Phaser.Scene {
         //set gravity
         red.setGravityY(0)
         blu.setGravityY(0)
-        //set speed and drag
+        //set speed and damping (friction)
         red.curSpeed = 275
         blu.curSpeed = 275
-        red.setDragX = 3000
-        blu.setDragX = 3000
+        red.body.useDamping = true
+        blu.body.useDamping = true
         //set verticle movement
         
         
