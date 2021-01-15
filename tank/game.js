@@ -16,11 +16,16 @@ class Main extends Phaser.Scene {
         red = this.physics.add.sprite(800,400,'red')
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
-        //physics stuff
+        //collide on edge
         red.setCollideWorldBounds(true)
         blu.setCollideWorldBounds(true)
+        //set gravity
         red.setGravityY(0)
         blu.setGravityY(0)
+        //set speed
+        red.curSpeed(300)
+        blu.curSpeed(300)
+        //set verticle movement
         
         
         //wall generation
