@@ -41,7 +41,7 @@ class Main extends Phaser.Scene {
         
         //wall generation
         wall = this.physics.add.staticGroup()
-        wall.create(300, 525, 'wall').setScale(1, 1).refreshBody()
+        wall.create(300, 525, 'wall').setScale(1, 3).refreshBody()
         
         //wall collision
         this.physics.add.collider(blu, wall)
