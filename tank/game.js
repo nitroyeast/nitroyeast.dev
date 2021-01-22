@@ -119,7 +119,7 @@ class Main extends Phaser.Scene {
             //}
             //graphics.strokeRectShape(brect)
             //setTimeout( () => {graphics.clear()}, 200)
-            bull.setVelocityY(bull.speed)
+            bull.setVelocityY(-bull.speed)
         }
 
         // blue player
