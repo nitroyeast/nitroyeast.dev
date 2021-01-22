@@ -23,6 +23,7 @@ class Main extends Phaser.Scene {
         //set gravity
         red.setGravityY(0)
         blu.setGravityY(0)
+        b
         //set speed and damping (friction), applied in setDrag
         red.curSpeed = 160
         blu.curSpeed = 160
@@ -43,6 +44,7 @@ class Main extends Phaser.Scene {
         bull = this.physics.add.sprite(800,600,'bull')
         bull.speed = 30
         bull.stop = 0
+        bull.setGravityY(0)
         
         
         //wall generation
