@@ -8,6 +8,7 @@ class Main extends Phaser.Scene {
         this.load.image('red', 'assets/img/red-tank.png')
         this.load.image('lazer', 'assets/img/lazer.png')
         this.load.image('wall', 'assets/img/wall.png')
+        this.load.image('bullet', 'assets/img/bullet.png')
     }
     create() {
         k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
@@ -37,6 +38,11 @@ class Main extends Phaser.Scene {
         red.vertX = 90
         blu.vertY = 90
         red.vertY = 90
+        
+        //bullet testing
+        bull = this.physics.add.sprite(800,600,'bullet')
+        bull.speed = 30
+        bull.stop = 0
         
         
         //wall generation
@@ -111,6 +117,7 @@ class Main extends Phaser.Scene {
             //}
             //graphics.strokeRectShape(brect)
             //setTimeout( () => {graphics.clear()}, 200)
+            bull.setVelocityY(bull.speed)
         }
 
         // blue player
@@ -164,6 +171,7 @@ class Main extends Phaser.Scene {
         }
 
         if (g) {
+            /*
             Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
@@ -173,7 +181,9 @@ class Main extends Phaser.Scene {
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(rrect)
-            setTimeout( () => {graphics.clear()}, 200)
+            setTimeout( () => {graphics.clear()}, 200) */
+            bull.setVelocityY(bull.stop)
+
         }
 
     }
