@@ -23,7 +23,7 @@ class Main extends Phaser.Scene {
         //set gravity
         red.setGravityY(0)
         blu.setGravityY(0)
-        b
+        
         //set speed and damping (friction), applied in setDrag
         red.curSpeed = 160
         blu.curSpeed = 160
