@@ -8,7 +8,7 @@ class Main extends Phaser.Scene {
         this.load.image('red', 'assets/img/red-tank.png')
         this.load.image('lazer', 'assets/img/lazer.png')
         this.load.image('wall', 'assets/img/wall.png')
-        this.load.image('bullet', 'assets/img/bullet.png')
+        this.load.image('bull', 'assets/img/bullet.png')
     }
     create() {
         k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
@@ -40,7 +40,7 @@ class Main extends Phaser.Scene {
         red.vertY = 90
         
         //bullet testing
-        bull = this.physics.add.sprite(800,600,'bullet')
+        bull = this.physics.add.sprite(800,600,'bull')
         bull.speed = 30
         bull.stop = 0
         
