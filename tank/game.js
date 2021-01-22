@@ -101,16 +101,16 @@ class Main extends Phaser.Scene {
         }
 
         if (space) {
-            Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
-            graphics.lineStyle(2,0xffffff)
-            graphics.strokeLineShape(lazer)
-            let brect = blu.getBounds()
-            if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
+            //Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
+            //graphics.lineStyle(2,0xffffff)
+            //graphics.strokeLineShape(lazer)
+            //let brect = blu.getBounds()
+            //if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
               // die die die
-              graphics.lineStyle(2, 0xff0000)
-            }
-            graphics.strokeRectShape(brect)
-            setTimeout( () => {graphics.clear()}, 200)
+              //graphics.lineStyle(2, 0xff0000)
+            //}
+            //graphics.strokeRectShape(brect)
+            //setTimeout( () => {graphics.clear()}, 200)
         }
 
         // blue player
