@@ -138,18 +138,19 @@ class Main extends Phaser.Scene {
             red.setVelocityY(red.curJump)
             red.rotation = Math.PI/2
         }
-
-        if (space) {
-            Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
+        
+        if (g) {
+            Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let brect = red.getBounds()
-            if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbull)) {
+            let rrect = red.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,rrect)) {
               // die die die
               graphics.lineStyle(2, 0xff0000)
             }
-            graphics.strokeRectShape(brect)
-            setTimeout( () => {graphics.clear()}, 200)
+            graphics.strokeRectShape(rrect)
+            setTimeout( () => {graphics.clear()}, 200) 
+
         }
 
         // blue player
