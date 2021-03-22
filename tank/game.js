@@ -144,11 +144,11 @@ class Main extends Phaser.Scene {
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
             let brect = blu.getBounds()
-            if (Phaser.Geom.Intersects.LineToRectangle(lazer,rrect)) {
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
               // die die die
               graphics.lineStyle(2, 0xff0000)
             }
-            graphics.strokeRectShape(rrect)
+            graphics.strokeRectShape(brect)
             setTimeout( () => {graphics.clear()}, 200) 
 
         }
