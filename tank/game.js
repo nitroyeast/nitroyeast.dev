@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics, ok, wall, bull
+let k, blu, red, lazer, graphics, ok, wall, bull, bull2
 
 class Main extends Phaser.Scene {
 
@@ -15,6 +15,7 @@ class Main extends Phaser.Scene {
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.physics.add.sprite(200,300,'blu')
         red = this.physics.add.sprite(800,400,'red')
+
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
         //collide on edge
@@ -41,20 +42,50 @@ class Main extends Phaser.Scene {
         red.vertY = 90
         
         //bullet testing
-        bull = this.physics.add.sprite(800,600,'bull')
-        bull.speed = 30
+        bull = this.physics.add.sprite(200, 600, 'bull')
+        bull2 = this.physics.add.sprite(800, 600, 'bull')
+        bull2.speed = 100
+        bull2.setGravity(0)
+        bull.speed = 100
         bull.stop = 0
         bull.setGravityY(0)
-        
+       
+        bull.setCollideWorldBounds(true, 1, 1)
+        bull2.setCollideWorldBounds(true, 1, 1)
+
         
         //wall generation
         wall = this.physics.add.staticGroup()
-        wall.create(300, 525, 'wall').setScale(1, 3).refreshBody()
+        wall.create(300, 100, 'wall').setScale(1, 1.5).refreshBody()
+        wall.create(300, 700, 'wall').setScale(1, 1.5).refreshBody()
         
         //wall collision
         this.physics.add.collider(blu, wall)
         this.physics.add.collider(red, wall)
 
+        this.physics.add.collider(red, bull2)
+        this.physics.add.collider(blu, bull2)
+        this.physics.add.collider(blu, bull) 
+        this.physics.add.collider(red, bull) 
+       
+
+        
+        //function for when bullet hits a wall
+        const bullWall = (bull,wall) => {
+            console.log("collision with wall")
+            bull.x = 800
+            bull.y = 600
+        }
+        const bull2wall = (bull2,wall) => {
+            console.log("bull2 collision with wall")
+            bull2.x = 200
+            bull2.y = 600
+        }
+        
+        //collider for bullet and wall, calls on bullWall function
+        this.physics.add.collider(bull, wall, bullWall)
+        this.physics.add.collider(bull2,wall, bull2wall)
+    
     }
 
     update() {
@@ -109,17 +140,16 @@ class Main extends Phaser.Scene {
         }
 
         if (space) {
-            //Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
-            //graphics.lineStyle(2,0xffffff)
-            //graphics.strokeLineShape(lazer)
-            //let brect = blu.getBounds()
-            //if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
+            Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
+            graphics.lineStyle(2,0xffffff)
+            graphics.strokeLineShape(lazer)
+            let lazerbull = bull.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbull)) {
               // die die die
-              //graphics.lineStyle(2, 0xff0000)
-            //}
-            //graphics.strokeRectShape(brect)
-            //setTimeout( () => {graphics.clear()}, 200)
-            bull.setVelocityY(-bull.speed)
+              graphics.lineStyle(2, 0xff0000)
+            }
+            graphics.strokeRectShape(brect)
+            setTimeout( () => {graphics.clear()}, 200)
         }
 
         // blue player
@@ -173,7 +203,6 @@ class Main extends Phaser.Scene {
         }
 
         if (g) {
-            /*
             Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
@@ -183,8 +212,7 @@ class Main extends Phaser.Scene {
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(rrect)
-            setTimeout( () => {graphics.clear()}, 200) */
-            bull.setVelocityY(bull.stop)
+            setTimeout( () => {graphics.clear()}, 200) 
 
         }
 
