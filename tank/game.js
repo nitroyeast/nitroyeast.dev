@@ -143,7 +143,7 @@ class Main extends Phaser.Scene {
             Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let lazerbull = bull.getBounds()
+            let brect = red.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbull)) {
               // die die die
               graphics.lineStyle(2, 0xff0000)
