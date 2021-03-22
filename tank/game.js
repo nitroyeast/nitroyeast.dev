@@ -11,7 +11,7 @@ class Main extends Phaser.Scene {
         this.load.image('bull', 'assets/img/bullet.png')
     }
     create() {
-        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
+        k = this.input.keyboard.addKeys('L,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
         this.add.image(0,0, 'bg').setOrigin(0,0)
         blu = this.physics.add.sprite(200,300,'blu')
         red = this.physics.add.sprite(800,400,'red')
@@ -96,7 +96,7 @@ class Main extends Phaser.Scene {
         let left = k.LEFT.isDown
         let down = k.DOWN.isDown
         let up = k.UP.isDown
-        let space = k.SHIFT.isDown
+        let space = k.L.isDown
 
         if (left && down) {
             red.setVelocityX(-red.vertY)
@@ -139,7 +139,7 @@ class Main extends Phaser.Scene {
             red.rotation = Math.PI/2
         }
         
-        if (g) {
+        if (space) {
             Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
