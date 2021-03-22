@@ -96,7 +96,7 @@ class Main extends Phaser.Scene {
         let left = k.LEFT.isDown
         let down = k.DOWN.isDown
         let up = k.UP.isDown
-        let space = k.SPACE.isDown
+        let space = k.SHIFT.isDown
 
         if (left && down) {
             red.setVelocityX(-red.vertY)
