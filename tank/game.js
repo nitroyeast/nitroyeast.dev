@@ -48,6 +48,7 @@ class Main extends Phaser.Scene {
         bull2.setGravity(0)
         bull.speed = 100
         bull.stop = 0
+        bull2.stop = 0
         bull.setGravityY(0)
        
         bull.setCollideWorldBounds(true, 1, 1)
@@ -75,11 +76,15 @@ class Main extends Phaser.Scene {
             console.log("collision with wall")
             bull.x = 200
             bull.y = 600
+            bull.setVelocityX(bull.stop)
+            bull.setVelocityY(bull.stop)
         }
         const bull2wall = (bull2,wall) => {
             console.log("bull2 collision with wall")
             bull2.x = 800
             bull2.y = 600
+            bull2.setVelocityX(bull2.stop)
+            bull2.setVelocityY(bull2.stop)
         }
         
         //collider for bullet and wall, calls on bullWall function
