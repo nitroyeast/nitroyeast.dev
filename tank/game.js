@@ -11,8 +11,11 @@ class Main extends Phaser.Scene {
         this.load.image('bull', 'assets/img/bullet.png')
     }
     create() {
+        //define k as key input
         k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
+        //add background
         this.add.image(0,0, 'bg').setOrigin(0,0)
+        //add in red and blue tank sprites
         blu = this.physics.add.sprite(200,300,'blu')
         red = this.physics.add.sprite(800,400,'red')
 
@@ -40,7 +43,6 @@ class Main extends Phaser.Scene {
         red.vertX = 90
         blu.vertY = 90
         red.vertY = 90
-        
         //bullet testing
         bull = this.physics.add.sprite(200, 400, 'bull')
         bull2 = this.physics.add.sprite(800, 400, 'bull')
@@ -151,6 +153,7 @@ class Main extends Phaser.Scene {
             let brect = blu.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
               // die die die
+                
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(brect)
