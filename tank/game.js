@@ -42,8 +42,8 @@ class Main extends Phaser.Scene {
         red.vertY = 90
         
         //bullet testing
-        bull = this.physics.add.sprite(200, 200, 'bull')
-        bull2 = this.physics.add.sprite(800, 600, 'bull')
+        bull = this.physics.add.sprite(200, 350, 'bull')
+        bull2 = this.physics.add.sprite(800, 400, 'bull')
         bull2.speed = 100
         bull2.setGravity(0)
         bull.speed = 100
