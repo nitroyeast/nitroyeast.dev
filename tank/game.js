@@ -75,14 +75,14 @@ class Main extends Phaser.Scene {
         const bullWall = (bull,wall) => {
             console.log("collision with wall")
             bull.x = 200
-            bull.y = 600
+            bull.y = 1500
             bull.setVelocityX(bull.stop)
             bull.setVelocityY(bull.stop)
         }
         const bull2wall = (bull2,wall) => {
             console.log("bull2 collision with wall")
             bull2.x = 800
-            bull2.y = 600
+            bull2.y = 1000
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
         }
