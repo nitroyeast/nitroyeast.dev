@@ -42,7 +42,7 @@ class Main extends Phaser.Scene {
         red.vertY = 90
         
         //bullet testing
-        bull = this.physics.add.sprite(200, 600, 'bull')
+        bull = this.physics.add.sprite(200, 1200, 'bull')
         bull2 = this.physics.add.sprite(800, 600, 'bull')
         bull2.speed = 100
         bull2.setGravity(0)
@@ -75,14 +75,14 @@ class Main extends Phaser.Scene {
         const bullWall = (bull,wall) => {
             console.log("collision with wall")
             bull.x = 200
-            bull.y = 4000
+            bull.y = 600
             bull.setVelocityX(bull.stop)
             bull.setVelocityY(bull.stop)
         }
         const bull2wall = (bull2,wall) => {
             console.log("bull2 collision with wall")
             bull2.x = 800
-            bull2.y = 3000
+            bull2.y = 600
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
         }
