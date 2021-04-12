@@ -36,8 +36,8 @@ class Main extends Phaser.Scene {
         red.setDrag(.001)
         blu.setDrag(.001)
         //set verticle movement
-        blu.curJump = 160
-        red.curJump = 160
+        blu.curJump = 200
+        red.curJump = 200
         //set horizontal movement
         blu.vertX = 90
         red.vertX = 90
