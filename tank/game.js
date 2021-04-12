@@ -36,13 +36,13 @@ class Main extends Phaser.Scene {
         red.setDrag(.001)
         blu.setDrag(.001)
         //set verticle movement
-        blu.curJump = 200
-        red.curJump = 200
+        blu.curJump = 160
+        red.curJump = 160
         //set horizontal movement
-        blu.vertX = 90
-        red.vertX = 90
-        blu.vertY = 90
-        red.vertY = 90
+        blu.vertX = 130
+        red.vertX = 130
+        blu.vertY = 130
+        red.vertY = 130
         //bullet testing
         bull = this.physics.add.sprite(200, 400, 'bull')
         bull2 = this.physics.add.sprite(800, 400, 'bull')
