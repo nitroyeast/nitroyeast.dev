@@ -16,7 +16,7 @@ class Main extends Phaser.Scene {
         //add background
         this.add.image(0,0, 'bg').setOrigin(0,0)
         //add in red and blue tank sprites
-        blu = this.physics.add.sprite(200,400,'blu')
+        blu = this.physics.add.sprite(100,400,'blu')
         red = this.physics.add.sprite(900,400,'red')
 
         lazer = new Phaser.Geom.Line()
@@ -59,10 +59,10 @@ class Main extends Phaser.Scene {
         
         //wall generation
         wall = this.physics.add.staticGroup()
-        wall.create(300, 75, 'wall').setScale(1, 1).refreshBody()
-        wall.create(300, 675, 'wall').setScale(1, 1).refreshBody()
-        wall.create(700, 75, 'wall').setScale(1, 1).refreshBody()
-        wall.create(700, 675, 'wall').setScale(1, 1).refreshBody()
+        wall.create(250, 100, 'wall').setScale(1, 1.2).refreshBody()
+        wall.create(250, 700, 'wall').setScale(1, 1.2).refreshBody()
+        wall.create(650, 100, 'wall').setScale(1, 1.2).refreshBody()
+        wall.create(650, 700, 'wall').setScale(1, 1.2).refreshBody()
         
         //wall collision
         this.physics.add.collider(blu, wall)
