@@ -100,13 +100,15 @@ class Main extends Phaser.Scene {
         
         //goal generation
         goal = this.physics.add.sprite(0,0,'goal').setScale(3, 8)
-        goal = this.physics.add.sprite(1010,0,'goal').setScale(3, 8)
+        goal = this.physics.add.sprite(1026,0,'goal').setScale(3, 8)
 
         //make goal non move
         goal.body.immovable = true;goal.body.moves = false
         //collide with tank
         this.physics.add.collider(goal, blu)
         this.physics.add.collider(goal, red) 
+        
+        
         //function for bullet and goal collision
         const bullGoal = (goal,bull) => {
             bull.x = 200
