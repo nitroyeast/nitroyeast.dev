@@ -73,11 +73,12 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(red, bull2)
         this.physics.add.collider(blu, bull2)
         this.physics.add.collider(blu, bull) 
-        this.physics.add.collider(red, bull) 
-        //bullet to bullet collision
-        this.physics.add.collider(bull,bull2)
-       
+        this.physics.add.collider(red, bull)
+        //tank collision
+        this.physics.add.collider(red, blu)
 
+
+     
         
         //function for when bullet hits a wall
         const bullWall = (bull,wall) => {
@@ -105,13 +106,23 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(goal, blu)
         this.physics.add.collider(goal, red) 
         //collide with bullets
-        this.physics.add.collider(goal, bull)//, bullGoal) 
-        this.physics.add.collider(goal, bull2)//, bull2Goal) 
-
-
-
+        this.physics.add.collider(goal, bull, bullGoal) 
+        this.physics.add.collider(goal, bull2, bull2Goal) 
         
-    
+        const bullGoal = (goal,bull) => {
+            bull.x = 200
+            bull.y = 400
+            bull.setVelocityX(bull.stop)
+            bull.setVelocityY(bull.stop)
+        }
+        const bull2Goal = (goal,bull2) => {
+            bull2.x = 800
+            bull2.y = 400
+            bull2.setVelocityX(bull2.stop)
+            bull2.setVelocityY(bull2.stop)
+        }
+        
+        
     }
 
     update() {
