@@ -77,8 +77,6 @@ class Main extends Phaser.Scene {
         //tank collision
         this.physics.add.collider(red, blu)
 
-
-     
         
         //function for when bullet hits a wall
         const bullWall = (bull,wall) => {
@@ -94,9 +92,11 @@ class Main extends Phaser.Scene {
             bull2.setVelocityY(bull2.stop)
         }
         
+        
         //collider for bullet and wall, calls on bullWall function
         this.physics.add.collider(bull, wall, bullWall)
         this.physics.add.collider(bull2,wall, bull2wall)
+        
         
         //goal generation
         goal = this.physics.add.sprite(0,0,'goal').setScale(3, 8)
@@ -105,10 +105,7 @@ class Main extends Phaser.Scene {
         //collide with tank
         this.physics.add.collider(goal, blu)
         this.physics.add.collider(goal, red) 
-        //collide with bullets
-        this.physics.add.collider(goal, bull, bullGoal) 
-        this.physics.add.collider(goal, bull2, bull2Goal) 
-        
+        //function for bullet and goal collision
         const bullGoal = (goal,bull) => {
             bull.x = 200
             bull.y = 400
@@ -121,6 +118,11 @@ class Main extends Phaser.Scene {
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
         }
+        //collide with bullets
+        this.physics.add.collider(goal, bull, bullGoal) 
+        this.physics.add.collider(goal, bull2, bull2Goal) 
+        
+
         
         
     }
