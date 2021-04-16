@@ -9,6 +9,8 @@ class Main extends Phaser.Scene {
         this.load.image('lazer', 'assets/img/lazer.png')
         this.load.image('wall', 'assets/img/wall.png')
         this.load.image('bull', 'assets/img/bullet.png')
+        this.load.image('goal', 'assets/img/goal.png')
+
     }
     create() {
         //define k as key input
@@ -94,6 +96,9 @@ class Main extends Phaser.Scene {
         //collider for bullet and wall, calls on bullWall function
         this.physics.add.collider(bull, wall, bullWall)
         this.physics.add.collider(bull2,wall, bull2wall)
+        
+        //goal generation
+        goal = this.physics.add.sprite(0,0,'goal')
     
     }
 
