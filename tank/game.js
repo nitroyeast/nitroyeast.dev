@@ -138,6 +138,7 @@ class Main extends Phaser.Scene {
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
+        }
         //collide with bullets
         this.physics.add.collider(goal, bull, bullGoal) 
         this.physics.add.collider(goal, bull2, bull2Goal)
