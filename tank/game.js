@@ -98,7 +98,7 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(bull2,wall, bull2wall)
         
         //goal generation
-        goal = this.physics.add.sprite(0,0,'goal')
+        goal = this.physics.add.sprite(0,0,'goal').setScale(3, 12)
     
     }
 
