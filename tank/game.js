@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics, ok, wall, bull, bull2, goal
+let k, blu, red, lazer, graphics, ok, wall, bull, bull2, goal, goal2
 
 class Main extends Phaser.Scene {
 
@@ -100,13 +100,17 @@ class Main extends Phaser.Scene {
         
         //goal generation
         goal = this.physics.add.sprite(0,0,'goal').setScale(3, 8)
-        goal = this.physics.add.sprite(1026,0,'goal').setScale(3, 8)
+        goal2 = this.physics.add.sprite(1026,0,'goal').setScale(3, 8)
 
         //make goal non move
         goal.body.immovable = true;goal.body.moves = false
+        goal2.body.immovable = true;goal2.body.moves = false
+
         //collide with tank
         this.physics.add.collider(goal, blu)
         this.physics.add.collider(goal, red) 
+        this.physics.add.collider(goal2, blu)
+        this.physics.add.collider(goal2, red) 
         
         
         //function for bullet and goal collision
@@ -122,9 +126,23 @@ class Main extends Phaser.Scene {
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
         }
+        //goal2
+        const bullGoal2 = (goal2,bull) => {
+            bull.x = 200
+            bull.y = 400
+            bull.setVelocityX(bull.stop)
+            bull.setVelocityY(bull.stop)
+        }
+        const bull2Goal2 = (goal2,bull2) => {
+            bull2.x = 800
+            bull2.y = 400
+            bull2.setVelocityX(bull2.stop)
+            bull2.setVelocityY(bull2.stop)
         //collide with bullets
         this.physics.add.collider(goal, bull, bullGoal) 
-        this.physics.add.collider(goal, bull2, bull2Goal) 
+        this.physics.add.collider(goal, bull2, bull2Goal)
+        this.physics.add.collider(goal2, bull, bullGoal2) 
+        this.physics.add.collider(goal2, bull2, bull2Goal2) 
         
 
         
