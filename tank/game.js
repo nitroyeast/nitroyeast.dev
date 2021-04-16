@@ -99,7 +99,7 @@ class Main extends Phaser.Scene {
         
         
         //goal generation
-        goal = this.physics.add.sprite(0,0,'goal').setScale(3, 6)
+        goal = this.physics.add.sprite(0,0,'goal').setScale(3, 7)
         //make goal non move
         goal.body.immovable = true;goal.body.moves = false
         //collide with tank
