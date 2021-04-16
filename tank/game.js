@@ -61,8 +61,8 @@ class Main extends Phaser.Scene {
         wall = this.physics.add.staticGroup()
         wall.create(250, 100, 'wall').setScale(1, 1.2).refreshBody()
         wall.create(250, 700, 'wall').setScale(1, 1.2).refreshBody()
-        wall.create(650, 100, 'wall').setScale(1, 1.2).refreshBody()
-        wall.create(650, 700, 'wall').setScale(1, 1.2).refreshBody()
+        wall.create(750, 100, 'wall').setScale(1, 1.2).refreshBody()
+        wall.create(750, 700, 'wall').setScale(1, 1.2).refreshBody()
         
         //wall collision
         this.physics.add.collider(blu, wall)
@@ -72,19 +72,19 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(blu, bull2)
         this.physics.add.collider(blu, bull) 
         this.physics.add.collider(red, bull) 
+        //bullet to bullet collision
+        this.physics.add.collider(bull,bull2)
        
 
         
         //function for when bullet hits a wall
         const bullWall = (bull,wall) => {
-            console.log("collision with wall")
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
             bull.setVelocityY(bull.stop)
         }
         const bull2wall = (bull2,wall) => {
-            console.log("bull2 collision with wall")
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
