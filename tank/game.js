@@ -1,7 +1,10 @@
-let k, blu, red, lazer, graphics, ok, wall, bull, bull2, goal, goal2
+let k, blu, red, lazer, graphics, ok, wall, bull, bull2, goal, goal2, rscore, bscore
 
 class Main extends Phaser.Scene {
-
+    init () {
+        rscore = 0
+        bscore = 0
+    }
     preload() {
         this.load.image('bg', 'assets/img/background.png')
         this.load.image('blu', 'assets/img/blu-tank.png')
@@ -114,13 +117,14 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(goal2, blu)
         this.physics.add.collider(goal2, red) 
         
-        let bluScore = this.add.text(100, 400, 'Blue Score: 0', {
+        //bluetext is text for the score, not the value itself
+        let blutext = this.add.text(100, 400, 'Blue Score: 0', {
             fontFamily: "comic sans ms",
             color: "blue",
             fontSize: "24px",
         })
-        
-        let redScore = this.add.text(16, 16, 'Red Score: 0', {
+        //redtext is text for the score, not the value itself
+        let redtext = this.add.text(900, 400, 'Red Score: 0', {
             fontFamily: "comic sans ms",
             color: "red",
             fontSize: "24px",
@@ -133,6 +137,8 @@ class Main extends Phaser.Scene {
         
         //blue bullet does into blue goal, minus 1 point for blue
         const bullGoal = (goal,bull) => {
+            bscore -= 1 
+            blutext.setText(`Score: ${bscore}`)
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
@@ -140,6 +146,8 @@ class Main extends Phaser.Scene {
         }
         //red bullet goes into blue goal, plus 1 point for red
         const bull2Goal = (goal,bull2) => {
+            rscore += 1 
+            redtext.setText(`Score: ${rscore}`)
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
@@ -149,6 +157,8 @@ class Main extends Phaser.Scene {
         //goal2
         //blue bullet goes into red goal, plus 1 point for blue
         const bullGoal2 = (goal2,bull) => {
+            bscore += 1 
+            blutext.setText(`Score: ${bscore}`)
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
@@ -156,6 +166,8 @@ class Main extends Phaser.Scene {
         }
         //red bullet goes into red goal, minus 1 point for red
         const bull2Goal2 = (goal2,bull2) => {
+            rscore -= 1 
+            redtext.setText(`Score: ${rscore}`)
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
