@@ -124,7 +124,7 @@ class Main extends Phaser.Scene {
             fontSize: "24px",
         })
         //redtext is text for the score, not the value itself
-        let redtext = this.add.text(900, 400, 'Red Score: 0', {
+        let redtext = this.add.text(950, 700, 'Red Score: 0', {
             fontFamily: "comic sans ms",
             color: "red",
             fontSize: "24px",
