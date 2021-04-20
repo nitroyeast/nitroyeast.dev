@@ -20,6 +20,8 @@ class Main extends Phaser.Scene {
         //add in red and blue tank sprites
         blu = this.physics.add.sprite(100,400,'blu')
         red = this.physics.add.sprite(900,400,'red')
+        red.rotation = Math.PI
+
 
         lazer = new Phaser.Geom.Line()
         graphics = this.add.graphics()
@@ -112,7 +114,7 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(goal2, blu)
         this.physics.add.collider(goal2, red) 
         
-        let bluScore = this.add.text(16, 16, 'Blue Score: 0', {
+        let bluScore = this.add.text(100, 400, 'Blue Score: 0', {
             fontFamily: "comic sans ms",
             color: "blue",
             fontSize: "24px",
