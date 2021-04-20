@@ -118,7 +118,7 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(goal2, red) 
         
         //bluetext is text for the score, not the value itself
-        let blutext = this.add.text(100, 400, 'Blue Score: 0', {
+        let blutext = this.add.text(50, 700, 'Blue Score: 0', {
             fontFamily: "comic sans ms",
             color: "blue",
             fontSize: "24px",
