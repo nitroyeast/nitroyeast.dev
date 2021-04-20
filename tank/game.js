@@ -112,27 +112,47 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(goal2, blu)
         this.physics.add.collider(goal2, red) 
         
+        let bluScore = this.add.text(16, 16, 'Blue Score: 0', {
+            fontFamily: "comic sans ms",
+            color: "blue",
+            fontSize: "24px",
+        })
+        
+        let redScore = this.add.text(16, 16, 'Red Score: 0', {
+            fontFamily: "comic sans ms",
+            color: "red",
+            fontSize: "24px",
+        })
+        
         
         //function for bullet and goal collision
+        //blue bullet is bull, red bullet is bull2
+        //goal is for blue, goal2 is for red.
+        
+        //blue bullet does into blue goal, minus 1 point for blue
         const bullGoal = (goal,bull) => {
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
             bull.setVelocityY(bull.stop)
         }
+        //red bullet goes into blue goal, plus 1 point for red
         const bull2Goal = (goal,bull2) => {
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
             bull2.setVelocityY(bull2.stop)
         }
+        
         //goal2
+        //blue bullet goes into red goal, plus 1 point for blue
         const bullGoal2 = (goal2,bull) => {
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
             bull.setVelocityY(bull.stop)
         }
+        //red bullet goes into red goal, minus 1 point for red
         const bull2Goal2 = (goal2,bull2) => {
             bull2.x = 800
             bull2.y = 400
