@@ -124,7 +124,7 @@ class Main extends Phaser.Scene {
             fontSize: "24px",
         })
         //redtext is text for the score, not the value itself
-        let redtext = this.add.text(950, 700, 'Red Score: 0', {
+        let redtext = this.add.text(850, 700, 'Red Score: 0', {
             fontFamily: "comic sans ms",
             color: "red",
             fontSize: "24px",
@@ -138,7 +138,7 @@ class Main extends Phaser.Scene {
         //blue bullet does into blue goal, minus 1 point for blue
         const bullGoal = (goal,bull) => {
             bscore -= 1 
-            blutext.setText(`Score: ${bscore}`)
+            blutext.setText(`Blue Score: ${bscore}`)
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
@@ -147,7 +147,7 @@ class Main extends Phaser.Scene {
         //red bullet goes into blue goal, plus 1 point for red
         const bull2Goal = (goal,bull2) => {
             rscore += 1 
-            redtext.setText(`Score: ${rscore}`)
+            redtext.setText(`Red Score: ${rscore}`)
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
@@ -158,7 +158,7 @@ class Main extends Phaser.Scene {
         //blue bullet goes into red goal, plus 1 point for blue
         const bullGoal2 = (goal2,bull) => {
             bscore += 1 
-            blutext.setText(`Score: ${bscore}`)
+            blutext.setText(`Blue Score: ${bscore}`)
             bull.x = 200
             bull.y = 400
             bull.setVelocityX(bull.stop)
@@ -167,7 +167,7 @@ class Main extends Phaser.Scene {
         //red bullet goes into red goal, minus 1 point for red
         const bull2Goal2 = (goal2,bull2) => {
             rscore -= 1 
-            redtext.setText(`Score: ${rscore}`)
+            redtext.setText(`Red Score: ${rscore}`)
             bull2.x = 800
             bull2.y = 400
             bull2.setVelocityX(bull2.stop)
