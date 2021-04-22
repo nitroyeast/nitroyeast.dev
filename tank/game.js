@@ -57,12 +57,13 @@ class Main extends Phaser.Scene {
         //ball phsyics
         bball = this.physics.add.sprite(200, 400, 'bball')
         rball = this.physics.add.sprite(800, 400, 'rball')
-        rball.speed = 190
-        rball.setGravity(0)
-        bball.speed = 190
+        rball.speed = 215
+        bball.speed = 215
         bball.stop = 0
         rball.stop = 0
         bball.setGravityY(0)
+        rball.setGravity(0)
+
        
         bball.setCollideWorldBounds(true, 1, 1)
         rball.setCollideWorldBounds(true, 1, 1)
