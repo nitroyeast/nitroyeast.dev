@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics, ok, wall, bull, bull2, goal, goal2, rscore, bscore
+let k, blu, red, lazer, graphics, ok, wall, bball, rball, goal, goal2, rscore, bscore
 
 class Main extends Phaser.Scene {
     init () {
@@ -11,7 +11,8 @@ class Main extends Phaser.Scene {
         this.load.image('red', 'assets/img/red-tank.png')
         this.load.image('lazer', 'assets/img/lazer.png')
         this.load.image('wall', 'assets/img/wall.png')
-        this.load.image('bull', 'assets/img/bullet.png')
+        this.load.image('bball', 'assets/img/bluball.png')
+        this.load.image('rball', 'assets/img/redball.png')
         this.load.image('goal', 'assets/img/goal.png')
 
     }
@@ -50,18 +51,19 @@ class Main extends Phaser.Scene {
         red.vertX = 130
         blu.vertY = 130
         red.vertY = 130
-        //bullet testing
-        bull = this.physics.add.sprite(200, 400, 'bull')
-        bull2 = this.physics.add.sprite(800, 400, 'bull')
-        bull2.speed = 100
-        bull2.setGravity(0)
-        bull.speed = 100
-        bull.stop = 0
-        bull2.stop = 0
-        bull.setGravityY(0)
+
+        //ball phsyics
+        bball = this.physics.add.sprite(200, 400, 'bball')
+        rball = this.physics.add.sprite(800, 400, 'rball')
+        rball.speed = 100
+        rball.setGravity(0)
+        bball.speed = 100
+        bball.stop = 0
+        rball.stop = 0
+        bball.setGravityY(0)
        
-        bull.setCollideWorldBounds(true, 1, 1)
-        bull2.setCollideWorldBounds(true, 1, 1)
+        bball.setCollideWorldBounds(true, 1, 1)
+        rball.setCollideWorldBounds(true, 1, 1)
 
         
         //wall generation
@@ -75,32 +77,32 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(blu, wall)
         this.physics.add.collider(red, wall)
 
-        this.physics.add.collider(red, bull2)
-        this.physics.add.collider(blu, bull2)
-        this.physics.add.collider(blu, bull) 
-        this.physics.add.collider(red, bull)
+        this.physics.add.collider(red, rball)
+        this.physics.add.collider(blu, rball)
+        this.physics.add.collider(blu, bball) 
+        this.physics.add.collider(red, bball)
         //tank collision
         this.physics.add.collider(red, blu)
 
         
-        //function for when bullet hits a wall
-        const bullWall = (bull,wall) => {
-            bull.x = 200
-            bull.y = 400
-            bull.setVelocityX(bull.stop)
-            bull.setVelocityY(bull.stop)
+        //function for when bballet hits a wall
+        const bballWall = (bball,wall) => {
+            bball.x = 200
+            bball.y = 400
+            bball.setVelocityX(bball.stop)
+            bball.setVelocityY(bball.stop)
         }
-        const bull2wall = (bull2,wall) => {
-            bull2.x = 800
-            bull2.y = 400
-            bull2.setVelocityX(bull2.stop)
-            bull2.setVelocityY(bull2.stop)
+        const rballwall = (rball,wall) => {
+            rball.x = 800
+            rball.y = 400
+            rball.setVelocityX(rball.stop)
+            rball.setVelocityY(rball.stop)
         }
         
         
-        //collider for bullet and wall, calls on bullWall function
-        this.physics.add.collider(bull, wall, bullWall)
-        this.physics.add.collider(bull2,wall, bull2wall)
+        //collider for bballet and wall, calls on bballWall function
+        this.physics.add.collider(bball, wall, bballWall)
+        this.physics.add.collider(rball,wall, rballwall)
         
         
         //goal generation
@@ -131,53 +133,53 @@ class Main extends Phaser.Scene {
         })
         
         
-        //function for bullet and goal collision
-        //blue bullet is bull, red bullet is bull2
+        //function for bballet and goal collision
+        //blue bballet is bball, red bballet is rball
         //goal is for blue, goal2 is for red.
         
-        //blue bullet does into blue goal, minus 1 point for blue
-        const bullGoal = (goal,bull) => {
+        //blue bballet does into blue goal, minus 1 point for blue
+        const bballGoal = (goal,bball) => {
             bscore -= 1 
             blutext.setText(`Blue Score: ${bscore}`)
-            bull.x = 200
-            bull.y = 400
-            bull.setVelocityX(bull.stop)
-            bull.setVelocityY(bull.stop)
+            bball.x = 200
+            bball.y = 400
+            bball.setVelocityX(bball.stop)
+            bball.setVelocityY(bball.stop)
         }
-        //red bullet goes into blue goal, plus 1 point for red
-        const bull2Goal = (goal,bull2) => {
+        //red bballet goes into blue goal, plus 1 point for red
+        const rballGoal = (goal,rball) => {
             rscore += 1 
             redtext.setText(`Red Score: ${rscore}`)
-            bull2.x = 800
-            bull2.y = 400
-            bull2.setVelocityX(bull2.stop)
-            bull2.setVelocityY(bull2.stop)
+            rball.x = 800
+            rball.y = 400
+            rball.setVelocityX(rball.stop)
+            rball.setVelocityY(rball.stop)
         }
         
         //goal2
-        //blue bullet goes into red goal, plus 1 point for blue
-        const bullGoal2 = (goal2,bull) => {
+        //blue bballet goes into red goal, plus 1 point for blue
+        const bballGoal2 = (goal2,bball) => {
             bscore += 1 
             blutext.setText(`Blue Score: ${bscore}`)
-            bull.x = 200
-            bull.y = 400
-            bull.setVelocityX(bull.stop)
-            bull.setVelocityY(bull.stop)
+            bball.x = 200
+            bball.y = 400
+            bball.setVelocityX(bball.stop)
+            bball.setVelocityY(bball.stop)
         }
-        //red bullet goes into red goal, minus 1 point for red
-        const bull2Goal2 = (goal2,bull2) => {
+        //red bballet goes into red goal, minus 1 point for red
+        const rballGoal2 = (goal2,rball) => {
             rscore -= 1 
             redtext.setText(`Red Score: ${rscore}`)
-            bull2.x = 800
-            bull2.y = 400
-            bull2.setVelocityX(bull2.stop)
-            bull2.setVelocityY(bull2.stop)
+            rball.x = 800
+            rball.y = 400
+            rball.setVelocityX(rball.stop)
+            rball.setVelocityY(rball.stop)
         }
-        //collide with bullets
-        this.physics.add.collider(goal, bull, bullGoal) 
-        this.physics.add.collider(goal, bull2, bull2Goal)
-        this.physics.add.collider(goal2, bull, bullGoal2) 
-        this.physics.add.collider(goal2, bull2, bull2Goal2) 
+        //collide with bballets
+        this.physics.add.collider(goal, bball, bballGoal) 
+        this.physics.add.collider(goal, rball, rballGoal)
+        this.physics.add.collider(goal2, bball, bballGoal2) 
+        this.physics.add.collider(goal2, rball, rballGoal2) 
         
 
         
