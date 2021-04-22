@@ -24,6 +24,7 @@ class Main extends Phaser.Scene {
         //add in red and blue tank sprites
         blu = this.physics.add.sprite(100,400,'blu')
         red = this.physics.add.sprite(900,400,'red')
+        //red tank faces foward when spawning 
         red.rotation = Math.PI
 
 
@@ -37,27 +38,27 @@ class Main extends Phaser.Scene {
         blu.setGravityY(0)
         
         //set speed and damping (friction), applied in setDrag
-        red.curSpeed = 160
-        blu.curSpeed = 160
+        red.curSpeed = 230
+        blu.curSpeed = 230
         red.body.useDamping = true
         blu.body.useDamping = true
         red.setDrag(.001)
         blu.setDrag(.001)
         //set verticle movement
-        blu.curJump = 160
-        red.curJump = 160
+        blu.curJump = 230
+        red.curJump = 230
         //set horizontal movement
-        blu.vertX = 130
-        red.vertX = 130
-        blu.vertY = 130
-        red.vertY = 130
+        blu.vertX = 200
+        red.vertX = 200
+        blu.vertY = 200
+        red.vertY = 200
 
         //ball phsyics
         bball = this.physics.add.sprite(200, 400, 'bball')
         rball = this.physics.add.sprite(800, 400, 'rball')
-        rball.speed = 100
+        rball.speed = 190
         rball.setGravity(0)
-        bball.speed = 100
+        bball.speed = 190
         bball.stop = 0
         rball.stop = 0
         bball.setGravityY(0)
