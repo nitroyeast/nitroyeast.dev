@@ -107,9 +107,9 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(rball,wall, rballwall)
         
         
-        //bgoal generation
+        //goal generation
         bgoal = this.physics.add.sprite(0,0,'bgoal').setScale(3, 8)
-        rgoal = this.physics.add.sprite(1026,0,'bgoal').setScale(3, 8)
+        rgoal = this.physics.add.sprite(1026,0,'rgoal').setScale(3, 8)
 
         //make bgoal non move
         bgoal.body.immovable = true;bgoal.body.moves = false
