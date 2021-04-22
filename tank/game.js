@@ -13,8 +13,8 @@ class Main extends Phaser.Scene {
         this.load.image('wall', 'assets/img/wall.png')
         this.load.image('bball', 'assets/img/bluball.png')
         this.load.image('rball', 'assets/img/redball.png')
-        this.load.image('bbgoal', 'assets/img/bluegoal.png')
-        this.load.image('rbgoal', 'assets/img/redgoal.png')
+        this.load.image('bgoal', 'assets/img/bluegoal.png')
+        this.load.image('rgoal', 'assets/img/redgoal.png')
 
     }
     create() {
