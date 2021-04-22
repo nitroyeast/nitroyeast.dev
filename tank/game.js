@@ -1,4 +1,4 @@
-let k, blu, red, lazer, graphics, ok, wall, bball, rball, goal, goal2, rscore, bscore
+let k, blu, red, lazer, graphics, ok, wall, bball, rball, bgoal, rgoal, rscore, bscore
 
 class Main extends Phaser.Scene {
     init () {
@@ -13,7 +13,8 @@ class Main extends Phaser.Scene {
         this.load.image('wall', 'assets/img/wall.png')
         this.load.image('bball', 'assets/img/bluball.png')
         this.load.image('rball', 'assets/img/redball.png')
-        this.load.image('goal', 'assets/img/goal.png')
+        this.load.image('bbgoal', 'assets/img/bluebgoal.png')
+        this.load.image('rbgoal', 'assets/img/redbgoal.png')
 
     }
     create() {
@@ -106,19 +107,19 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(rball,wall, rballwall)
         
         
-        //goal generation
-        goal = this.physics.add.sprite(0,0,'goal').setScale(3, 8)
-        goal2 = this.physics.add.sprite(1026,0,'goal').setScale(3, 8)
+        //bgoal generation
+        bgoal = this.physics.add.sprite(0,0,'bgoal').setScale(3, 8)
+        rgoal = this.physics.add.sprite(1026,0,'bgoal').setScale(3, 8)
 
-        //make goal non move
-        goal.body.immovable = true;goal.body.moves = false
-        goal2.body.immovable = true;goal2.body.moves = false
+        //make bgoal non move
+        bgoal.body.immovable = true;bgoal.body.moves = false
+        rgoal.body.immovable = true;rgoal.body.moves = false
 
         //collide with tank
-        this.physics.add.collider(goal, blu)
-        this.physics.add.collider(goal, red) 
-        this.physics.add.collider(goal2, blu)
-        this.physics.add.collider(goal2, red) 
+        this.physics.add.collider(bgoal, blu)
+        this.physics.add.collider(bgoal, red) 
+        this.physics.add.collider(rgoal, blu)
+        this.physics.add.collider(rgoal, red) 
         
         //bluetext is text for the score, not the value itself
         let blutext = this.add.text(50, 700, 'Blue Score: 0', {
@@ -134,12 +135,12 @@ class Main extends Phaser.Scene {
         })
         
         
-        //function for bballet and goal collision
+        //function for bballet and bgoal collision
         //blue bballet is bball, red bballet is rball
-        //goal is for blue, goal2 is for red.
+        //bgoal is for blue, rgoal is for red.
         
-        //blue bballet does into blue goal, minus 1 point for blue
-        const bballGoal = (goal,bball) => {
+        //blue bballet does into blue bgoal, minus 1 point for blue
+        const bballGoal = (bgoal,bball) => {
             bscore -= 1 
             blutext.setText(`Blue Score: ${bscore}`)
             bball.x = 200
@@ -147,8 +148,8 @@ class Main extends Phaser.Scene {
             bball.setVelocityX(bball.stop)
             bball.setVelocityY(bball.stop)
         }
-        //red bballet goes into blue goal, plus 1 point for red
-        const rballGoal = (goal,rball) => {
+        //red bballet goes into blue bgoal, plus 1 point for red
+        const rballGoal = (bgoal,rball) => {
             rscore += 1 
             redtext.setText(`Red Score: ${rscore}`)
             rball.x = 800
@@ -157,9 +158,9 @@ class Main extends Phaser.Scene {
             rball.setVelocityY(rball.stop)
         }
         
-        //goal2
-        //blue bballet goes into red goal, plus 1 point for blue
-        const bballGoal2 = (goal2,bball) => {
+        //rgoal
+        //blue bballet goes into red bgoal, plus 1 point for blue
+        const bballGoal2 = (rgoal,bball) => {
             bscore += 1 
             blutext.setText(`Blue Score: ${bscore}`)
             bball.x = 200
@@ -167,8 +168,8 @@ class Main extends Phaser.Scene {
             bball.setVelocityX(bball.stop)
             bball.setVelocityY(bball.stop)
         }
-        //red bballet goes into red goal, minus 1 point for red
-        const rballGoal2 = (goal2,rball) => {
+        //red bballet goes into red bgoal, minus 1 point for red
+        const rballGoal2 = (rgoal,rball) => {
             rscore -= 1 
             redtext.setText(`Red Score: ${rscore}`)
             rball.x = 800
@@ -177,10 +178,10 @@ class Main extends Phaser.Scene {
             rball.setVelocityY(rball.stop)
         }
         //collide with bballets
-        this.physics.add.collider(goal, bball, bballGoal) 
-        this.physics.add.collider(goal, rball, rballGoal)
-        this.physics.add.collider(goal2, bball, bballGoal2) 
-        this.physics.add.collider(goal2, rball, rballGoal2) 
+        this.physics.add.collider(bgoal, bball, bballGoal) 
+        this.physics.add.collider(bgoal, rball, rballGoal)
+        this.physics.add.collider(rgoal, bball, bballGoal2) 
+        this.physics.add.collider(rgoal, rball, rballGoal2) 
         
 
         
