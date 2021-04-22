@@ -87,7 +87,8 @@ class Main extends Phaser.Scene {
         this.physics.add.collider(red, blu)
 
         
-        //function for when bballet hits a wall
+        //function for when bballet hits a wall, UNUSED
+        /*
         const bballWall = (bball,wall) => {
             bball.x = 200
             bball.y = 400
@@ -100,11 +101,11 @@ class Main extends Phaser.Scene {
             rball.setVelocityX(rball.stop)
             rball.setVelocityY(rball.stop)
         }
+        */
         
-        
-        //collider for bballet and wall, calls on bballWall function
-        this.physics.add.collider(bball, wall, bballWall)
-        this.physics.add.collider(rball,wall, rballwall)
+        //collider for bballet and wall
+        this.physics.add.collider(bball, wall)
+        this.physics.add.collider(rball,wall)
         
         
         //goal generation
@@ -177,7 +178,7 @@ class Main extends Phaser.Scene {
             rball.setVelocityX(rball.stop)
             rball.setVelocityY(rball.stop)
         }
-        //collide with bballets
+        //collide with ball
         this.physics.add.collider(bgoal, bball, bballGoal) 
         this.physics.add.collider(bgoal, rball, rballGoal)
         this.physics.add.collider(rgoal, bball, bballGoal2) 
