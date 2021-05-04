@@ -247,8 +247,7 @@ class Main extends Phaser.Scene {
             graphics.strokeLineShape(lazer)
             let lazerbball = bball.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbball)) {
-              // die die die
-                
+              bball.setVelocityX(bball.lazerboost)  
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(lazerbball)
@@ -312,7 +311,7 @@ class Main extends Phaser.Scene {
             graphics.strokeLineShape(lazer)
             let lazerball = rball.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerball)) {
-              // die die die
+              rball.setVelocityX(rball.lazerboost)
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(lazerball)
