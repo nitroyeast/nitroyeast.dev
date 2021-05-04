@@ -245,13 +245,13 @@ class Main extends Phaser.Scene {
             Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let lazerbball = rball.getBounds()
+            let lazerbball = bball.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbball)) {
-              bball.setVelocityX(-rball.lazerboost)  
+              bball.setVelocityX(-bball.lazerboost)  
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(lazerbball)
-            setTimeout( () => {graphics.clear()}, 200) 
+            setTimeout( () => {graphics.clear()}, 100) 
 
         }
 
@@ -309,9 +309,9 @@ class Main extends Phaser.Scene {
             Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let lazerball = bball.getBounds()
+            let lazerball = rball.getBounds()
             if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerball)) {
-              rball.setVelocityX(bball.lazerboost)
+              rball.setVelocityX(rball.lazerboost)
               graphics.lineStyle(2, 0xff0000)
             }
             graphics.strokeRectShape(lazerball)
