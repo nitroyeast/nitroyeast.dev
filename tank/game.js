@@ -55,10 +55,10 @@ class Main extends Phaser.Scene {
         red.vertY = 200
 
         //ball phsyics
-        bball = this.physics.add.sprite(200, 400, 'bball')
-        rball = this.physics.add.sprite(800, 400, 'rball')
-        rball.speed = 215
-        bball.speed = 215
+        bball = this.physics.add.sprite(200, 400, 'bball').setScale(1.3, 1.3)
+        rball = this.physics.add.sprite(800, 400, 'rball').setScale(1.3, 1.3)
+        rball.lazerboost = 215
+        bball.lazerboost = 215
         bball.stop = 0
         rball.stop = 0
         bball.setGravityY(0)
@@ -245,13 +245,13 @@ class Main extends Phaser.Scene {
             Phaser.Geom.Line.SetToAngle(lazer,red.x,red.y,red.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let brect = blu.getBounds()
-            if (Phaser.Geom.Intersects.LineToRectangle(lazer,brect)) {
+            let lazerbball = bball.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerbball)) {
               // die die die
                 
               graphics.lineStyle(2, 0xff0000)
             }
-            graphics.strokeRectShape(brect)
+            graphics.strokeRectShape(lazerbball)
             setTimeout( () => {graphics.clear()}, 200) 
 
         }
@@ -310,12 +310,12 @@ class Main extends Phaser.Scene {
             Phaser.Geom.Line.SetToAngle(lazer,blu.x,blu.y,blu.rotation, 2000)
             graphics.lineStyle(2,0xffffff)
             graphics.strokeLineShape(lazer)
-            let rrect = red.getBounds()
-            if (Phaser.Geom.Intersects.LineToRectangle(lazer,rrect)) {
+            let lazerball = rball.getBounds()
+            if (Phaser.Geom.Intersects.LineToRectangle(lazer,lazerball)) {
               // die die die
               graphics.lineStyle(2, 0xff0000)
             }
-            graphics.strokeRectShape(rrect)
+            graphics.strokeRectShape(lazerball)
             setTimeout( () => {graphics.clear()}, 200) 
 
         }
