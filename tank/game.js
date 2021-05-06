@@ -261,7 +261,7 @@ class Main extends Phaser.Scene {
         let d = k.D.isDown
         let s = k.S.isDown
         let w = k.W.isDown
-        let g = k.SPACE.isDown
+        let g = k.Z.isDown
 
         if (a && w) {
             blu.setVelocityX(-blu.vertX)
