@@ -19,7 +19,7 @@ class Main extends Phaser.Scene {
     }
     create() {
         //define k as key input
-        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,SPACE')
+        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,Z')
         //add background
         this.add.image(0,0, 'bg').setOrigin(0,0)
         //add in red and blue tank sprites
