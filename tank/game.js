@@ -19,7 +19,7 @@ class Main extends Phaser.Scene {
     }
     create() {
         //define k as key input
-        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,Z')
+        k = this.input.keyboard.addKeys('SHIFT,LEFT,RIGHT,UP,DOWN,W,A,S,D,Q')
         //add background
         this.add.image(0,0, 'bg').setOrigin(0,0)
         //add in red and blue tank sprites
@@ -261,7 +261,7 @@ class Main extends Phaser.Scene {
         let d = k.D.isDown
         let s = k.S.isDown
         let w = k.W.isDown
-        let g = k.Z.isDown
+        let g = k.Q.isDown
 
         if (a && w) {
             blu.setVelocityX(-blu.vertX)
@@ -316,7 +316,6 @@ class Main extends Phaser.Scene {
             }
             graphics.strokeRectShape(lazerball)
             setTimeout( () => {graphics.clear()}, 100) 
-            setTimeout( () => {lazer.lazerboost}, 500)
 
         }
 
