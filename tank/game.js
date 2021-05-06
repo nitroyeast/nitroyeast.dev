@@ -316,7 +316,7 @@ class Main extends Phaser.Scene {
             }
             graphics.strokeRectShape(lazerball)
             setTimeout( () => {graphics.clear()}, 100) 
-            setTimeout( () => {lazer.clear()}, 500)
+            setTimeout( () => {lazer.lazerboost}, 500)
 
         }
 
